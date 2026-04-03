@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini Uygulama Merkezi</title>
+  <style>
+    :root {
+      --text: #eef2ff;
+      --muted: #b7c0df;
+      --accent: #7c9cff;
+      --accent-2: #67e8f9;
+      --success: #52d6a8;
+      --danger: #ff7a90;
+      --shadow: 0 18px 45px rgba(0,0,0,.28);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(124,156,255,.25), transparent 28%),
+        radial-gradient(circle at top right, rgba(103,232,249,.15), transparent 22%),
+        linear-gradient(180deg, #0b1020 0%, #121932 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    .app-shell { max-width: 1200px; margin: 0 auto; padding: 20px; }
+    .hero {
+      background: linear-gradient(135deg, rgba(124,156,255,.25), rgba(103,232,249,.10));
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+      margin-bottom: 20px;
+    }
+    .hero h1 { margin: 0 0 10px; font-size: clamp(28px, 5vw, 48px); }
+    .hero p { margin: 0; color: var(--muted); line-height: 1.6; max-width: 800px; }
+
+    .topbar {
+      display: flex; gap: 12px; align-items: center; justify-content: space-between;
+      margin: 18px 0 22px; flex-wrap: wrap;
+    }
+    .search { flex: 1; min-width: 240px; }
+
+    .search input, input, textarea, select {
+      width: 100%; background: rgba(255,255,255,.08); color: var(--text);
+      border: 1px solid rgba(255,255,255,.12); border-radius: 16px;
+      padding: 14px 16px; outline: none; font-size: 15px;
+    }
+    textarea { min-height: 100px; resize: vertical; }
+    input::placeholder, textarea::placeholder { color: #b8c0dfaa; }
+
+    .btn {
+      border: 0; border-radius: 16px; padding: 12px 16px; font-weight: 700;
+      cursor: pointer; background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #08101f; transition: .2s transform;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn.secondary {
+      background: rgba(255,255,255,.09); color: var(--text);
+      border: 1px solid rgba(255,255,255,.12);
+    }
+    .btn.danger { background: linear-gradient(135deg, #ff7a90, #ffb36b); }
+    .btn.success { background: linear-gradient(135deg, #52d6a8, #95f9c3); }
+
+    .grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;
+    }
+    .card {
+      background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.10);
+      border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); backdrop-filter: blur(10px);
+    }
+    .tool-card {
+      cursor: pointer; transition: .25s transform, .25s border-color; min-height: 190px;
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .tool-card:hover { transform: translateY(-4px); border-color: rgba(124,156,255,.55); }
+
+    .tool-icon {
+      width: 52px; height: 52px; display: grid; place-items: center; border-radius: 16px;
+      font-size: 26px; background: linear-gradient(135deg, rgba(124,156,255,.25), rgba(103,232,249,.12));
+      margin-bottom: 14px;
+    }
+    .tool-card h3, .section-title { margin: 0 0 8px; font-size: 20px; }
+    .tool-card p, .muted { margin: 0; color: var(--muted); line-height: 1.55; }
+
+    .badge {
+      display: inline-flex; padding: 8px 10px; border-radius: 999px; font-size: 12px;
+      font-weight: 700; background: rgba(255,255,255,.08); color: var(--muted); margin-top: 16px;
+    }
+
+    .screen { display: none; }
+    .screen.active { display: block; }
+
+    .screen-header {
+      display: flex; gap: 12px; justify-content: space-between; align-items: center;
+      margin-bottom: 18px; flex-wrap: wrap;
+    }
+
+    .stack { display: grid; gap: 12px; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+    .result, .list-item {
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.09);
+      border-radius: 16px; padding: 14px;
+    }
+    .list { display: grid; gap: 10px; margin-top: 10px; }
+    .list-item {
+      display: flex; justify-content: space-between; gap: 10px; align-items: flex-start; flex-wrap: wrap;
+    }
+
+    .small { font-size: 13px; color: var(--muted); }
+    .big-number { font-size: 34px; font-weight: 800; }
+
+    .progress {
+      width: 100%; height: 12px; background: rgba(255,255,255,.08); border-radius: 999px; overflow: hidden;
+    }
+    .progress > div {
+      height: 100%; width: 0; background: linear-gradient(135deg, var(--accent), var(--success));
+    }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+    .chip {
+      padding: 10px 12px; border-radius: 999px; background: rgba(255,255,255,.08);
+      cursor: pointer; border: 1px solid rgba(255,255,255,.1);
+    }
+    .chip.selected {
+      background: linear-gradient(135deg, rgba(124,156,255,.35), rgba(103,232,249,.18));
+      border-color: rgba(124,156,255,.5);
+    }
+
+    .quote { font-size: 18px; line-height: 1.7; color: #f4f7ff; }
+    .cover-preview {
+      background: linear-gradient(135deg, rgba(124,156,255,.18), rgba(103,232,249,.08));
+      min-height: 180px; display: grid; place-items: center; text-align: center;
+    }
+    .link-list a {
+      display: block; color: var(--text); text-decoration: none; padding: 14px;
+      background: rgba(255,255,255,.06); border-radius: 14px; margin-top: 10px;
+      border: 1px solid rgba(255,255,255,.08); word-break: break-all;
+    }
+    .mood-row { display: flex; gap: 10px; flex-wrap: wrap; }
+    .mood-btn {
+      font-size: 26px; padding: 12px 14px; border-radius: 16px; background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.1); cursor: pointer;
+    }
+    .footer-note { margin-top: 20px; text-align: center; color: var(--muted); font-size: 13px; }
+
+    @media (max-width: 800px) {
+      .two-col, .three-col { grid-template-columns: 1fr; }
+      .hero { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <section class="hero">
+      <h1>Mini Uygulama Merkezi</h1>
+      <p>Tek HTML dosyasında çalışan, GitHub Pages’e uygun, modern görünümlü çok amaçlı araç merkezi. Ana menüden uygulama seç, detay ekranında işlemini yap, istediğin zaman geri dön.</p>
+    </section>
+
+    <section id="homeScreen" class="screen active">
+      <div class="topbar">
+        <div class="search"><input id="toolSearch" placeholder="Uygulama ara... örn: quiz, portföy, masraf" /></div>
+        <button class="btn secondary" id="clearAllDataBtn">Tüm yerel verileri temizle</button>
+      </div>
+      <div class="grid" id="toolGrid"></div>
+      <div class="footer-note">Tüm veriler tarayıcıdaki localStorage içinde tutulur.</div>
+    </section>
+
+    <section id="detailScreen" class="screen">
+      <div class="screen-header">
+        <div>
+          <div class="small" id="detailCategory"></div>
+          <h2 class="section-title" id="detailTitle"></h2>
+          <div class="muted" id="detailDesc"></div>
+        </div>
+        <button class="btn secondary" id="backBtn">← Geri Dön</button>
+      </div>
+      <div id="detailContent"></div>
+    </section>
+  </div>
+
+  <script>
+    const storage = {
+      get(key, fallback) {
+        try { return JSON.parse(localStorage.getItem(key)) ?? fallback; } catch { return fallback; }
+      },
+      set(key, value) { localStorage.setItem(key, JSON.stringify(value)); }
+    };
+
+    const toolDefinitions = [
+      { id: 'portfolio', icon: '🧑‍💼', title: 'CV / Portföy', category: 'Vitrin', desc: 'Kendi profilini, yeteneklerini ve öne çıkan işlerini tek sayfalık görünümde hazırla.' },
+      { id: 'links', icon: '🔗', title: 'Link Sayfası', category: 'Vitrin', desc: 'Kişisel link merkezi oluştur. Sosyal medya ve proje bağlantılarını derle.' },
+      { id: 'expenses', icon: '💸', title: 'Masraf Takibi', category: 'Araç', desc: 'Gelir ve giderlerini kaydet, toplam bakiyeni anında gör.' },
+      { id: 'reminder', icon: '⏰', title: 'Hatırlatma Paneli', category: 'Araç', desc: 'Tarayıcı bildirim izniyle günlük hatırlatmalarını tek yerden tut.' },
+      { id: 'todo', icon: '✅', title: 'Yapılacaklar + Pomodoro', category: 'Odak', desc: 'Görevlerini yönet, pomodoro başlat, odak süreni takip et.' },
+      { id: 'fortune', icon: '🔮', title: 'Fal / Kart Çekimi', category: 'Eğlence', desc: 'Günlük kart seç ve kısa yorum al.' },
+      { id: 'prompt', icon: '🤖', title: 'Prompt Üretici', category: 'AI Yardımcısı', desc: 'İhtiyacına göre kullanıma hazır prompt üret.' },
+      { id: 'quiz', icon: '🧠', title: 'Quiz', category: 'Eğitim', desc: 'Kısa mini quiz çöz, skorunu takip et.' },
+      { id: 'decision', icon: '⚖️', title: 'Karar Verici', category: 'Araç', desc: 'İki seçeneği puanlayarak daha mantıklı tercih yap.' },
+      { id: 'mood', icon: '😊', title: 'Ruh Hali Takibi', category: 'Kişisel', desc: 'Bugünkü modunu kaydet, kısa notlarla geçmişini gör.' },
+      { id: 'habit', icon: '🔥', title: 'Alışkanlık Takibi', category: 'Kişisel', desc: 'Alışkanlık zinciri oluştur ve ilerleme yüzdesini takip et.' },
+      { id: 'planner', icon: '📚', title: 'Ders Planlayıcı', category: 'Eğitim', desc: 'Sınava kadar kalan güne göre basit çalışma planı hazırla.' }
+    ];
+
+    const fortunes = [
+      'Bugün küçük bir adım, beklediğinden daha büyük bir kapı açabilir.',
+      'Kararsız kaldığın konuda iç sesin aslında uzun süredir doğruyu söylüyor.',
+      'Yeni bir başlangıç için mükemmel zaman değil, ama yeterince iyi bir zaman.',
+      'Sabırlı kaldığın bir konuda sevindirici haber yaklaşmış olabilir.',
+      'Bugün enerjini dağıtmazsan kısa sürede net sonuç alacaksın.'
+    ];
+
+    const quizQuestions = [
+      { q: 'HTML ne için kullanılır?', options: ['Veritabanı', 'Sayfa yapısı', 'Sunucu logları'], a: 1 },
+      { q: 'CSS neyi düzenler?', options: ['Tasarımı', 'Sunucu hafızasını', 'API anahtarını'], a: 0 },
+      { q: 'JavaScript tarayıcıda ne sağlar?', options: ['Etkileşim', 'Elektrik tüketimi', 'Domain kaydı'], a: 0 },
+      { q: 'localStorage ne için kullanılır?', options: ['Yerel veri saklama', 'Video render', 'DNS ayarı'], a: 0 }
+    ];
+
+    const homeScreen = document.getElementById('homeScreen');
+    const detailScreen = document.getElementById('detailScreen');
+    const toolGrid = document.getElementById('toolGrid');
+    const toolSearch = document.getElementById('toolSearch');
+    const detailTitle = document.getElementById('detailTitle');
+    const detailCategory = document.getElementById('detailCategory');
+    const detailDesc = document.getElementById('detailDesc');
+    const detailContent = document.getElementById('detailContent');
+
+    function renderToolCards(filter = '') {
+      const q = filter.trim().toLowerCase();
+      const items = toolDefinitions.filter(t => [t.title, t.desc, t.category].join(' ').toLowerCase().includes(q));
+      toolGrid.innerHTML = items.map(t => `
+        <div class="card tool-card" onclick="openTool('${t.id}')">
+          <div>
+            <div class="tool-icon">${t.icon}</div>
+            <h3>${t.title}</h3>
+            <p>${t.desc}</p>
+          </div>
+          <span class="badge">${t.category}</span>
+        </div>
+      `).join('');
+    }
+
+    function openTool(id) {
+      const tool = toolDefinitions.find(t => t.id === id);
+      detailTitle.textContent = tool.title;
+      detailCategory.textContent = tool.category;
+      detailDesc.textContent = tool.desc;
+      homeScreen.classList.remove('active');
+      detailScreen.classList.add('active');
+      detailContent.innerHTML = renderToolTemplate(id);
+      bindToolLogic(id);
+    }
+
+    function goHome() {
+      detailScreen.classList.remove('active');
+      homeScreen.classList.add('active');
+    }
+
+    document.getElementById('backBtn').onclick = goHome;
+    toolSearch.addEventListener('input', e => renderToolCards(e.target.value));
+    document.getElementById('clearAllDataBtn').onclick = () => {
+      if (confirm('Tüm yerel veriler silinsin mi?')) {
+        localStorage.clear();
+        alert('Yerel veriler temizlendi.');
+        renderToolCards(toolSearch.value);
+        goHome();
+      }
+    };
+
+    function renderToolTemplate(id) {
+      switch (id) {
+        case 'portfolio': return `
+          <div class="two-col">
+            <div class="card stack">
+              <input id="pfName" placeholder="Ad Soyad" />
+              <input id="pfRole" placeholder="Rol / Ünvan" />
+              <textarea id="pfBio" placeholder="Kısa biyografi"></textarea>
+              <input id="pfSkills" placeholder="Yetenekler (virgülle)" />
+              <textarea id="pfProjects" placeholder="Projeler (her satır bir proje)"></textarea>
+              <button class="btn" id="savePortfolioBtn">Kaydet</button>
+            </div>
+            <div class="card cover-preview" id="portfolioPreview"></div>
+          </div>`;
+        case 'links': return `
+          <div class="two-col">
+            <div class="card stack">
+              <input id="linkTitle" placeholder="Bağlantı başlığı" />
+              <input id="linkUrl" placeholder="https://..." />
+              <button class="btn" id="addLinkBtn">Link ekle</button>
+              <div class="small">İpucu: GitHub, LinkedIn, proje demo, mağaza linkleri ekleyebilirsin.</div>
+            </div>
+            <div class="card"><div id="linksList" class="link-list"></div></div>
+          </div>`;
+        case 'expenses': return `
+          <div class="three-col">
+            <div class="card stack">
+              <input id="expenseTitle" placeholder="Açıklama" />
+              <input id="expenseAmount" type="number" placeholder="Tutar" />
+              <select id="expenseType"><option value="income">Gelir</option><option value="expense">Gider</option></select>
+              <button class="btn" id="addExpenseBtn">Ekle</button>
+            </div>
+            <div class="card"><div class="small">Toplam Gelir</div><div class="big-number" id="incomeTotal">0 ₺</div></div>
+            <div class="card"><div class="small">Bakiye</div><div class="big-number" id="balanceTotal">0 ₺</div></div>
+          </div>
+          <div class="card list" id="expenseList"></div>`;
+        case 'reminder': return `
+          <div class="two-col">
+            <div class="card stack">
+              <input id="reminderText" placeholder="Hatırlatma metni" />
+              <input id="reminderTime" type="time" />
+              <button class="btn" id="saveReminderBtn">Kaydet</button>
+              <button class="btn secondary" id="notifyPermissionBtn">Bildirim izni iste</button>
+              <div class="small">Sayfa açıkken dakikalık kontrol yapar. GitHub Pages için backend gerekmez.</div>
+            </div>
+            <div class="card list" id="reminderList"></div>
+          </div>`;
+        case 'todo': return `
+          <div class="three-col">
+            <div class="card stack">
+              <input id="todoText" placeholder="Yeni görev" />
+              <button class="btn" id="addTodoBtn">Görev ekle</button>
+            </div>
+            <div class="card">
+              <div class="small">Pomodoro</div>
+              <div class="big-number" id="pomodoroTime">25:00</div>
+              <div class="chips" style="margin-top:12px;">
+                <button class="btn" id="startPomodoroBtn">Başlat</button>
+                <button class="btn secondary" id="resetPomodoroBtn">Sıfırla</button>
+              </div>
+            </div>
+            <div class="card"><div class="small">Tamamlanan Görev</div><div class="big-number" id="doneTodoCount">0</div></div>
+          </div>
+          <div class="card list" id="todoList"></div>`;
+        case 'fortune': return `
+          <div class="card stack">
+            <div class="quote" id="fortuneText">Bugünün kartı seni bekliyor.</div>
+            <div class="chips">
+              <button class="btn" id="drawCardBtn">Kart Çek</button>
+              <button class="btn secondary" id="copyFortuneBtn">Yorumu Kopyala</button>
+            </div>
+          </div>`;
+        case 'prompt': return `
+          <div class="two-col">
+            <div class="card stack">
+              <select id="promptType">
+                <option value="mobil uygulama">Mobil uygulama fikri</option>
+                <option value="spring boot backend">Spring Boot backend</option>
+                <option value="flutter ekran tasarımı">Flutter ekran tasarımı</option>
+                <option value="google play açıklaması">Google Play açıklaması</option>
+                <option value="mail yazımı">Mail yazımı</option>
+              </select>
+              <input id="promptGoal" placeholder="Amaç / istediğin sonuç" />
+              <textarea id="promptDetails" placeholder="Detaylar"></textarea>
+              <button class="btn" id="generatePromptBtn">Prompt üret</button>
+            </div>
+            <div class="card"><textarea id="promptOutput" placeholder="Üretilen prompt burada görünecek"></textarea></div>
+          </div>`;
+        case 'quiz': return `
+          <div class="card stack">
+            <div id="quizBox"></div>
+            <button class="btn" id="nextQuizBtn">Sonraki Soru</button>
+            <div class="small" id="quizScore">Skor: 0</div>
+          </div>`;
+        case 'decision': return `
+          <div class="two-col">
+            <div class="card stack">
+              <input id="optA" placeholder="Seçenek A" />
+              <input id="scoreA" type="number" placeholder="Puan A (0-10)" />
+            </div>
+            <div class="card stack">
+              <input id="optB" placeholder="Seçenek B" />
+              <input id="scoreB" type="number" placeholder="Puan B (0-10)" />
+            </div>
+          </div>
+          <div class="card stack">
+            <button class="btn" id="compareBtn">Karşılaştır</button>
+            <div class="result" id="decisionResult">Henüz karşılaştırma yapılmadı.</div>
+          </div>`;
+        case 'mood': return `
+          <div class="card stack">
+            <div class="mood-row" id="moodButtons">
+              <button class="mood-btn">😄</button><button class="mood-btn">🙂</button><button class="mood-btn">😐</button><button class="mood-btn">😔</button><button class="mood-btn">😤</button>
+            </div>
+            <textarea id="moodNote" placeholder="Bugünle ilgili kısa not"></textarea>
+            <button class="btn" id="saveMoodBtn">Kaydet</button>
+          </div>
+          <div class="card list" id="moodList"></div>`;
+        case 'habit': return `
+          <div class="two-col">
+            <div class="card stack">
+              <input id="habitName" placeholder="Alışkanlık adı" />
+              <button class="btn" id="addHabitBtn">Ekle</button>
+            </div>
+            <div class="card"><div class="small">İlerleme</div><div class="progress"><div id="habitProgressBar"></div></div><div style="margin-top:10px" id="habitProgressText">0%</div></div>
+          </div>
+          <div class="card list" id="habitList"></div>`;
+        case 'planner': return `
+          <div class="two-col">
+            <div class="card stack">
+              <input id="studyCourse" placeholder="Ders / konu" />
+              <input id="studyExamDate" type="date" />
+              <input id="studyDailyHours" type="number" placeholder="Günlük saat" />
+              <button class="btn" id="generatePlanBtn">Plan oluştur</button>
+            </div>
+            <div class="card" id="studyPlanOutput">Plan burada oluşacak.</div>
+          </div>`;
+      }
+    }
+
+    function bindToolLogic(id) {
+      if (id === 'portfolio') bindPortfolio();
+      if (id === 'links') bindLinks();
+      if (id === 'expenses') bindExpenses();
+      if (id === 'reminder') bindReminder();
+      if (id === 'todo') bindTodo();
+      if (id === 'fortune') bindFortune();
+      if (id === 'prompt') bindPrompt();
+      if (id === 'quiz') bindQuiz();
+      if (id === 'decision') bindDecision();
+      if (id === 'mood') bindMood();
+      if (id === 'habit') bindHabit();
+      if (id === 'planner') bindPlanner();
+    }
+
+    function bindPortfolio() {
+      const data = storage.get('portfolioData', { name: '', role: '', bio: '', skills: '', projects: '' });
+      pfName.value = data.name; pfRole.value = data.role; pfBio.value = data.bio; pfSkills.value = data.skills; pfProjects.value = data.projects;
+      const render = () => {
+        portfolioPreview.innerHTML = `
+          <div>
+            <h2 style="margin:0 0 8px;">${pfName.value || 'Ad Soyad'}</h2>
+            <div class="muted" style="margin-bottom:12px;">${pfRole.value || 'Rol / Ünvan'}</div>
+            <div class="small" style="max-width:500px; margin:0 auto 12px;">${pfBio.value || 'Kısa biyografi burada görünecek.'}</div>
+            <div class="chips" style="justify-content:center; margin-bottom:12px;">${(pfSkills.value || '').split(',').filter(Boolean).map(s => `<span class="chip selected">${s.trim()}</span>`).join('')}</div>
+            <div class="small">${(pfProjects.value || '').split('\n').filter(Boolean).join(' • ') || 'Projeler burada listelenecek.'}</div>
+          </div>`;
+      };
+      render();
+      savePortfolioBtn.onclick = () => storage.set('portfolioData', { name: pfName.value, role: pfRole.value, bio: pfBio.value, skills: pfSkills.value, projects: pfProjects.value });
+      [pfName, pfRole, pfBio, pfSkills, pfProjects].forEach(el => el.addEventListener('input', () => { render(); savePortfolioBtn.onclick(); }));
+    }
+
+    function bindLinks() {
+      let links = storage.get('linksData', []);
+      const render = () => {
+        linksList.innerHTML = links.length ? links.map((l, i) => `
+          <div class="list-item">
+            <div style="flex:1; min-width:0;"><a href="${l.url}" target="_blank" rel="noopener noreferrer">${l.title} — ${l.url}</a></div>
+            <button class="btn danger" onclick="deleteLink(${i})">Sil</button>
+          </div>`).join('') : '<div class="small">Henüz link eklenmedi.</div>';
+      };
+      window.deleteLink = i => { links.splice(i, 1); storage.set('linksData', links); render(); };
+      addLinkBtn.onclick = () => {
+        if (!linkTitle.value.trim() || !linkUrl.value.trim()) return;
+        links.unshift({ title: linkTitle.value.trim(), url: linkUrl.value.trim() });
+        storage.set('linksData', links);
+        linkTitle.value = ''; linkUrl.value = '';
+        render();
+      };
+      render();
+    }
+
+    function bindExpenses() {
+      let items = storage.get('expenseData', []);
+      const render = () => {
+        const income = items.filter(i => i.type === 'income').reduce((s, i) => s + i.amount, 0);
+        const expense = items.filter(i => i.type === 'expense').reduce((s, i) => s + i.amount, 0);
+        incomeTotal.textContent = income.toFixed(2) + ' ₺';
+        balanceTotal.textContent = (income - expense).toFixed(2) + ' ₺';
+        expenseList.innerHTML = items.length ? items.map((i, idx) => `
+          <div class="list-item">
+            <div><strong>${i.title}</strong><div class="small">${i.type === 'income' ? 'Gelir' : 'Gider'} · ${i.amount.toFixed(2)} ₺</div></div>
+            <button class="btn danger" onclick="deleteExpense(${idx})">Sil</button>
+          </div>`).join('') : '<div class="small">Kayıt yok.</div>';
+      };
+      window.deleteExpense = idx => { items.splice(idx,1); storage.set('expenseData', items); render(); };
+      addExpenseBtn.onclick = () => {
+        const title = expenseTitle.value.trim();
+        const amount = parseFloat(expenseAmount.value);
+        if (!title || isNaN(amount)) return;
+        items.unshift({ title, amount, type: expenseType.value });
+        storage.set('expenseData', items);
+        expenseTitle.value = ''; expenseAmount.value = '';
+        render();
+      };
+      render();
+    }
+
+    function bindReminder() {
+      let items = storage.get('reminderData', []);
+      const render = () => {
+        reminderList.innerHTML = items.length ? items.map((r, i) => `
+          <div class="list-item">
+            <div><strong>${r.text}</strong><div class="small">Saat: ${r.time}</div></div>
+            <button class="btn danger" onclick="deleteReminder(${i})">Sil</button>
+          </div>`).join('') : '<div class="small">Hatırlatma yok.</div>';
+      };
+      window.deleteReminder = i => { items.splice(i,1); storage.set('reminderData', items); render(); };
+      saveReminderBtn.onclick = () => {
+        if (!reminderText.value.trim() || !reminderTime.value) return;
+        items.unshift({ text: reminderText.value.trim(), time: reminderTime.value, firedDate: '' });
+        storage.set('reminderData', items);
+        reminderText.value = ''; reminderTime.value = '';
+        render();
+      };
+      notifyPermissionBtn.onclick = () => Notification.requestPermission();
+      render();
+    }
+
+    function startReminderWatcher() {
+      setInterval(() => {
+        const items = storage.get('reminderData', []);
+        const now = new Date();
+        const hhmm = now.toTimeString().slice(0,5);
+        const today = now.toISOString().slice(0,10);
+        let changed = false;
+        items.forEach(r => {
+          if (r.time === hhmm && r.firedDate !== today) {
+            if ('Notification' in window && Notification.permission === 'granted') {
+              new Notification('Hatırlatma', { body: r.text });
+            }
+            r.firedDate = today;
+            changed = true;
+          }
+        });
+        if (changed) storage.set('reminderData', items);
+      }, 30000);
+    }
+
+    let pomodoroInterval = null;
+    function bindTodo() {
+      let todos = storage.get('todoData', []);
+      let seconds = storage.get('pomodoroSeconds', 1500);
+      const render = () => {
+        doneTodoCount.textContent = todos.filter(t => t.done).length;
+        pomodoroTime.textContent = formatTime(seconds);
+        todoList.innerHTML = todos.length ? todos.map((t, i) => `
+          <div class="list-item">
+            <div><strong style="text-decoration:${t.done ? 'line-through' : 'none'};">${t.text}</strong></div>
+            <div class="chips">
+              <button class="btn ${t.done ? 'secondary' : 'success'}" onclick="toggleTodo(${i})">${t.done ? 'Geri al' : 'Tamamla'}</button>
+              <button class="btn danger" onclick="deleteTodo(${i})">Sil</button>
+            </div>
+          </div>`).join('') : '<div class="small">Henüz görev eklenmedi.</div>';
+      };
+      window.toggleTodo = i => { todos[i].done = !todos[i].done; storage.set('todoData', todos); render(); };
+      window.deleteTodo = i => { todos.splice(i,1); storage.set('todoData', todos); render(); };
+      addTodoBtn.onclick = () => {
+        if (!todoText.value.trim()) return;
+        todos.unshift({ text: todoText.value.trim(), done: false });
+        storage.set('todoData', todos);
+        todoText.value = '';
+        render();
+      };
+      startPomodoroBtn.onclick = () => {
+        if (pomodoroInterval) return;
+        pomodoroInterval = setInterval(() => {
+          seconds--;
+          if (seconds <= 0) {
+            clearInterval(pomodoroInterval); pomodoroInterval = null; seconds = 0; alert('Pomodoro tamamlandı.');
+          }
+          storage.set('pomodoroSeconds', seconds);
+          pomodoroTime.textContent = formatTime(seconds);
+        }, 1000);
+      };
+      resetPomodoroBtn.onclick = () => {
+        clearInterval(pomodoroInterval); pomodoroInterval = null; seconds = 1500;
+        storage.set('pomodoroSeconds', seconds); render();
+      };
+      render();
+    }
+
+    function bindFortune() {
+      fortuneText.textContent = storage.get('lastFortune', 'Bugünün kartı seni bekliyor.');
+      drawCardBtn.onclick = () => {
+        const fortune = fortunes[Math.floor(Math.random() * fortunes.length)];
+        fortuneText.textContent = fortune; storage.set('lastFortune', fortune);
+      };
+      copyFortuneBtn.onclick = async () => { try { await navigator.clipboard.writeText(fortuneText.textContent); alert('Kopyalandı.'); } catch {} };
+    }
+
+    function bindPrompt() {
+      promptOutput.value = storage.get('lastPrompt', '');
+      generatePromptBtn.onclick = () => {
+        const text = `Sen deneyimli bir ${promptType.value} uzmanısın. Amacım: ${promptGoal.value || 'belirtilmedi'}. Şu detayları dikkate al: ${promptDetails.value || 'ek detay yok'}. Bana net, uygulanabilir, adım adım ve sonuç odaklı çıktı ver.`;
+        promptOutput.value = text; storage.set('lastPrompt', text);
+      };
+    }
+
+    function bindQuiz() {
+      let score = storage.get('quizScoreValue', 0);
+      quizScore.textContent = 'Skor: ' + score;
+      function nextQuestion() {
+        const current = quizQuestions[Math.floor(Math.random() * quizQuestions.length)];
+        quizBox.innerHTML = `
+          <div class="result">
+            <strong>${current.q}</strong>
+            <div class="list" style="margin-top:14px;">${current.options.map((opt, i) => `<button class="btn secondary" onclick="answerQuiz(${i}, ${current.a})">${opt}</button>`).join('')}</div>
+          </div>`;
+      }
+      window.answerQuiz = (selected, answer) => {
+        if (selected === answer) { score++; storage.set('quizScoreValue', score); quizScore.textContent = 'Skor: ' + score; alert('Doğru!'); }
+        else alert('Yanlış cevap.');
+        nextQuestion();
+      };
+      nextQuizBtn.onclick = nextQuestion;
+      nextQuestion();
+    }
+
+    function bindDecision() {
+      compareBtn.onclick = () => {
+        const aName = optA.value.trim() || 'Seçenek A';
+        const bName = optB.value.trim() || 'Seçenek B';
+        const a = parseFloat(scoreA.value) || 0;
+        const b = parseFloat(scoreB.value) || 0;
+        decisionResult.textContent = a === b ? `${aName} ve ${bName} eşit görünüyor. Ek kriter eklemen iyi olur.` : (a > b ? `Daha mantıklı görünen tercih: ${aName} (${a} puan)` : `Daha mantıklı görünen tercih: ${bName} (${b} puan)`);
+      };
+    }
+
+    function bindMood() {
+      let moods = storage.get('moodData', []);
+      let selectedMood = '🙂';
+      const render = () => {
+        moodList.innerHTML = moods.length ? moods.map(m => `<div class="list-item"><div><strong>${m.emoji}</strong> ${m.note || 'Not yok'}<div class="small">${m.date}</div></div></div>`).join('') : '<div class="small">Henüz kayıt yok.</div>';
+      };
+      [...document.querySelectorAll('.mood-btn')].forEach(btn => btn.onclick = () => selectedMood = btn.textContent);
+      saveMoodBtn.onclick = () => {
+        moods.unshift({ emoji: selectedMood, note: moodNote.value.trim(), date: new Date().toLocaleString('tr-TR') });
+        storage.set('moodData', moods); moodNote.value = ''; render();
+      };
+      render();
+    }
+
+    function bindHabit() {
+      let habits = storage.get('habitData', []);
+      const render = () => {
+        const total = habits.length; const done = habits.filter(h => h.done).length; const pct = total ? Math.round((done / total) * 100) : 0;
+        habitProgressBar.style.width = pct + '%'; habitProgressText.textContent = pct + '%';
+        habitList.innerHTML = habits.length ? habits.map((h, i) => `
+          <div class="list-item">
+            <div><strong>${h.name}</strong></div>
+            <div class="chips">
+              <button class="btn ${h.done ? 'secondary' : 'success'}" onclick="toggleHabit(${i})">${h.done ? 'İşaret kaldır' : 'Yapıldı'}</button>
+              <button class="btn danger" onclick="deleteHabit(${i})">Sil</button>
+            </div>
+          </div>`).join('') : '<div class="small">Henüz alışkanlık yok.</div>';
+      };
+      window.toggleHabit = i => { habits[i].done = !habits[i].done; storage.set('habitData', habits); render(); };
+      window.deleteHabit = i => { habits.splice(i,1); storage.set('habitData', habits); render(); };
+      addHabitBtn.onclick = () => {
+        if (!habitName.value.trim()) return;
+        habits.push({ name: habitName.value.trim(), done: false }); storage.set('habitData', habits); habitName.value = ''; render();
+      };
+      render();
+    }
+
+    function bindPlanner() {
+      generatePlanBtn.onclick = () => {
+        const course = studyCourse.value.trim() || 'Ders';
+        const date = studyExamDate.value;
+        const daily = parseFloat(studyDailyHours.value) || 1;
+        if (!date) return;
+        const today = new Date(); const exam = new Date(date + 'T00:00:00');
+        const diffDays = Math.max(1, Math.ceil((exam - today) / (1000 * 60 * 60 * 24)));
+        const totalHours = diffDays * daily;
+        studyPlanOutput.innerHTML = `
+          <div class="stack">
+            <div><strong>${course}</strong> için yaklaşık <strong>${diffDays}</strong> gün var.</div>
+            <div>Günde <strong>${daily}</strong> saat ayırırsan toplam <strong>${totalHours}</strong> saat çalışabilirsin.</div>
+            <div class="result">Öneri: İlk %50 konu tamamlama, sonraki %30 soru çözümü, son %20 tekrar ve deneme sınavı.</div>
+          </div>`;
+      };
+    }
+
+    function formatTime(s) {
+      const m = Math.floor(s / 60).toString().padStart(2, '0');
+      const sec = Math.floor(s % 60).toString().padStart(2, '0');
+      return `${m}:${sec}`;
+    }
+
+    renderToolCards();
+    startReminderWatcher();
+  </script>
+</body>
+</html>
