@@ -1,6 +1,6 @@
 {
   "apiBaseUrl": "https://api.football-data.org/v4",
-  "webApiBaseUrl": "",
-  "apiKey": "3fea97c9f25842149d7efd2510f5f898",
-  "sendAuthHeader": true
+  "webApiBaseUrl": "https://footballflash-proxy.<your-subdomain>.workers.dev/v4",
+  "apiKey": "",
+  "sendAuthHeader": false
 }
