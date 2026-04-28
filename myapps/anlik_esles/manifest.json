@@ -1,0 +1,12 @@
+{
+  "name": "Anlık Eşleş",
+  "short_name": "Anlık Eşleş",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#F7F7FC",
+  "theme_color": "#4F46E5",
+  "description": "Anlık eşleşme ve WebRTC sohbet uygulaması.",
+  "orientation": "portrait-primary",
+  "prefer_related_applications": false,
+  "icons": []
+}

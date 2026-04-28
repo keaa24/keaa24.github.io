@@ -1,0 +1,26 @@
+{
+  "iceServers": [
+    {
+      "urls": [
+        "stun:stun.l.google.com:19302",
+        "stun:stun1.l.google.com:19302"
+      ]
+    },
+    {
+      "urls": [
+        "turn:130.61.86.65:3478?transport=udp",
+        "turn:130.61.86.65:3478?transport=tcp"
+      ],
+      "username": "emre",
+      "credential": "123456"
+    },
+    {
+      "urls": [
+        "turn:136.119.243.65:3478?transport=udp",
+        "turn:136.119.243.65:3478?transport=tcp"
+      ],
+      "username": "emre",
+      "credential": "123456"
+    }
+  ]
+}
