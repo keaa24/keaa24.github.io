@@ -16,25 +16,36 @@
       margin: 0;
       padding: 0;
       height: 100%;
+      overflow: hidden;
     }
-    #flutter-app {
-      width: 100%;
-      height: calc(100% - 114px);
+    /* Flutter view'ı ekranın tamamını değil, reklamın üstünü kaplasın */
+    flutter-view {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 114px !important;
+      width: 100% !important;
+      height: auto !important;
     }
+    /* Reklam: sayfanın en altına sabitli, Flutter'ın önünde */
     #adsense-bottom-banner {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
       width: 100%;
       min-height: 90px;
-      text-align: center;
       background: #ffffff;
+      text-align: center;
+      z-index: 999999;
       padding: 12px 0;
       box-sizing: border-box;
     }
   </style>
 </head>
 <body>
-  <div id="flutter-app">
-    <script src="flutter_bootstrap.js" async></script>
-  </div>
+  <script src="flutter_bootstrap.js" async></script>
   <div id="adsense-bottom-banner">
     <ins class="adsbygoogle"
          style="display:block"
