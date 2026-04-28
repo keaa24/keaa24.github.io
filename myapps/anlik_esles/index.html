@@ -18,29 +18,29 @@
       height: 100%;
       overflow: hidden;
     }
-    /* Flutter view'ı ekranın tamamını değil, reklamın üstünü kaplasın */
-    flutter-view {
-      position: fixed !important;
-      top: 0 !important;
-      left: 0 !important;
-      right: 0 !important;
-      bottom: 114px !important;
-      width: 100% !important;
-      height: auto !important;
-    }
-    /* Reklam: sayfanın en altına sabitli, Flutter'ın önünde */
+    /* Reklam başlangıçta gizli, yüklenince JS gösterecek */
     #adsense-bottom-banner {
+      display: none;
       position: fixed;
       left: 0;
       right: 0;
       bottom: 0;
       width: 100%;
-      min-height: 90px;
+      height: 60px;
       background: #ffffff;
       text-align: center;
       z-index: 999999;
-      padding: 12px 0;
       box-sizing: border-box;
+      overflow: hidden;
+    }
+    #adsense-bottom-banner ins {
+      width: 100% !important;
+      height: 50px !important;
+      display: block !important;
+    }
+    /* Reklam göründüğünde Flutter view'ı yukarı çek */
+    body.ad-visible flutter-view {
+      bottom: 60px !important;
     }
   </style>
 </head>
@@ -48,14 +48,26 @@
   <script src="flutter_bootstrap.js" async></script>
   <div id="adsense-bottom-banner">
     <ins class="adsbygoogle"
-         style="display:block"
+         style="display:inline-block;width:100%;height:50px"
          data-ad-client="ca-pub-3520800149573354"
-         data-ad-slot="6195027818"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
+         data-ad-slot="6195027818"></ins>
   </div>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    // Reklam gerçekten yüklenince banner'ı göster ve Flutter'ı yukarı çek
+    (adsbygoogle = window.adsbygoogle || []).push = (function(origPush) {
+      return function() {
+        var result = origPush.apply(this, arguments);
+        setTimeout(function() {
+          var ins = document.querySelector('#adsense-bottom-banner ins');
+          if (ins && ins.getAttribute('data-ad-status') === 'filled') {
+            document.getElementById('adsense-bottom-banner').style.display = 'block';
+            document.body.classList.add('ad-visible');
+          }
+        }, 2000);
+        return result;
+      };
+    })(window.adsbygoogle.push);
+  </script>
 </body>
 </html>
