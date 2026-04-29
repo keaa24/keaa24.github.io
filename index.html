@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emre Akın | Apps</title>
+  <meta name="description" content="Emre Akın tarafından geliştirilen mobil uygulamalar, web projeleri ve uygulama sayfası." />
+  <meta name="author" content="Emre Akın" />
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --border: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb, #38bdf8);
+      color: white;
+      padding: 56px 20px;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    nav {
+      background: white;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav .nav-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      font-weight: bold;
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      margin-left: 16px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .hero h1 {
+      margin: 0 0 12px;
+      font-size: 42px;
+      line-height: 1.15;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 0 0 24px;
+      font-size: 18px;
+      color: #e0f2fe;
+    }
+
+    .hero-actions a {
+      display: inline-block;
+      background: white;
+      color: var(--primary-dark);
+      padding: 12px 18px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-right: 10px;
+      margin-top: 8px;
+    }
+
+    main {
+      padding: 36px 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
+    }
+
+    .card h2,
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .section {
+      margin-bottom: 28px;
+    }
+
+    .app-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .app-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
+    }
+
+    .app-card a {
+      color: var(--primary);
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #eff6ff;
+      color: #1d4ed8;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      margin-right: 6px;
+      margin-top: 6px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      background: white;
+      padding: 24px 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+      margin-right: 12px;
+    }
+
+    @media (max-width: 800px) {
+      .grid,
+      .app-list {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      nav a {
+        margin-left: 0;
+        margin-right: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="brand" href="/">Emre Akın</a>
+    <div>
+      <a href="/">Ana Sayfa</a>
+      <a href="/about.html">Hakkımda</a>
+      <a href="/contact.html">İletişim</a>
+      <a href="/privacy.html">Gizlilik</a>
+      <a href="/safety/child-safety.html">Çocuk Güvenliği</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="container hero">
+    <h1>Emre Akın tarafından geliştirilen mobil uygulamalar ve web projeleri</h1>
+    <p>
+      Bu web sitesi, Emre Akın’a ait uygulama ve proje sayfalarını tanıtmak,
+      kullanıcıları bilgilendirmek, gizlilik ve güvenlik politikalarına erişim sağlamak
+      amacıyla hazırlanmıştır.
+    </p>
+    <div class="hero-actions">
+      <a href="/about.html">Hakkımda</a>
+      <a href="/contact.html">İletişime Geç</a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="section grid">
+    <div class="card">
+      <h3>Geliştirici</h3>
+      <p><strong>Emre Akın</strong></p>
+      <p class="muted">
+        Mobil uygulama, web uygulaması ve yazılım projeleri geliştiren bağımsız geliştirici.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>İletişim</h3>
+      <p>
+        E-posta:
+        <a href="mailto:emreakin75@hotmail.com">emreakin75@hotmail.com</a>
+      </p>
+      <p class="muted">
+        Uygulamalar, destek talepleri ve gizlilik konuları için bu adres üzerinden iletişim kurulabilir.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Proje Alanı</h3>
+      <p><strong>PixoFun Apps</strong></p>
+      <p class="muted">
+        Eğlence, iletişim, yardımcı araçlar ve kullanıcı odaklı basit mobil uygulama projeleri.
+      </p>
+    </div>
+  </section>
+
+  <section class="section card">
+    <h2>Bu site ne için kullanılıyor?</h2>
+    <p>
+      <strong>emrepixofun.github.io</strong>, Emre Akın tarafından geliştirilen uygulama ve
+      web projelerinin tanıtım sayfasıdır. Bu alanda uygulama bağlantıları, gizlilik politikaları,
+      iletişim bilgileri, çocuk güvenliği açıklamaları ve uygulamalara ait bilgilendirme sayfaları yer alır.
+    </p>
+    <p>
+      Site; Google AdSense, Google AdMob, uygulama mağazası başvuruları ve kullanıcı bilgilendirme
+      süreçlerinde resmi geliştirici web sitesi olarak kullanılabilir.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>Uygulamalar ve projeler</h2>
+
+    <div class="app-list">
+      <div class="app-card">
+        <h3>Anlık Eşleş</h3>
+        <p class="muted">
+          Kullanıcıların anlık olarak eşleşmesini ve iletişim kurmasını amaçlayan sade bir uygulama projesi.
+        </p>
+        <p>
+          <span class="badge">Mobil Uygulama</span>
+          <span class="badge">İletişim</span>
+        </p>
+        <a href="/myapps/anlik_esles/">Uygulama sayfasına git</a>
+      </div>
+
+      <div class="app-card">
+        <h3>Projeler</h3>
+        <p class="muted">
+          Emre Akın tarafından geliştirilen farklı mobil ve web projeleri için genel tanıtım alanı.
+        </p>
+        <p>
+          <span class="badge">Web</span>
+          <span class="badge">Mobil</span>
+          <span class="badge">Yazılım</span>
+        </p>
+        <a href="/about.html">Daha fazla bilgi</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section card">
+    <h2>Yasal ve güvenlik bağlantıları</h2>
+    <p>
+      Kullanıcı güvenliği, gizlilik ve şeffaflık için aşağıdaki sayfalar hazırlanmıştır:
+    </p>
+    <ul>
+      <li><a href="/privacy.html">Gizlilik Politikası</a></li>
+      <li><a href="/safety/child-safety.html">Çocuk Güvenliği Politikası</a></li>
+      <li><a href="/contact.html">İletişim ve Destek</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Emre Akın. Tüm hakları saklıdır.</p>
+    <p>
+      <a href="/">Ana Sayfa</a>
+      <a href="/about.html">Hakkımda</a>
+      <a href="/contact.html">İletişim</a>
+      <a href="/privacy.html">Gizlilik</a>
+      <a href="/safety/child-safety.html">Çocuk Güvenliği</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
