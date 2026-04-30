@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="/myapps/codeshare/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="Kısa kodla 24 saatlik metin paylaşımı.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+
+  <meta property="og:title" content="Emre CodeShare">
+  <meta property="og:description" content="Kısa kodla hızlı metin paylaşımı.">
+  <meta property="og:type" content="website">
+
+  <title>Emre CodeShare</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <script>
+    window.shareCodeLink = async function(title, text, url) {
+      try {
+        if (navigator.share) {
+          await navigator.share({ title: title, text: text, url: url });
+          return 'shared';
+        }
+        if (navigator.clipboard) {
+          await navigator.clipboard.writeText(url);
+          return 'copied';
+        }
+        return 'unsupported';
+      } catch (e) {
+        return 'cancelled';
+      }
+    }
+  </script>
+</head>
+<body>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>

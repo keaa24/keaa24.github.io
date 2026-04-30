@@ -1,0 +1,11 @@
+{
+  "name": "Emre CodeShare",
+  "short_name": "CodeShare",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#111827",
+  "theme_color": "#111827",
+  "description": "Kısa kodla 24 saatlik metin paylaşımı.",
+  "orientation": "portrait-primary",
+  "prefer_related_applications": false
+}
