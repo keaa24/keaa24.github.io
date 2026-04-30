@@ -5,7 +5,7 @@
   "display": "standalone",
   "background_color": "#070918",
   "theme_color": "#00E5FF",
-  "description": "WebRTC DataChannel ile 1v1 neon arena oyunu.",
+  "description": "Fast 1v1 arcade soccer.",
   "orientation": "landscape",
   "icons": [
     {
