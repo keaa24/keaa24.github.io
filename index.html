@@ -1,331 +1,341 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Emre Akın | Apps</title>
-  <meta name="description" content="Emre Akın tarafından geliştirilen mobil uygulamalar, web projeleri ve uygulama sayfası." />
-  <meta name="author" content="Emre Akın" />
-  <style>
-    :root {
-      --bg: #f7f8fb;
-      --card: #ffffff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --primary: #2563eb;
-      --primary-dark: #1d4ed8;
-      --border: #e5e7eb;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    header {
-      background: linear-gradient(135deg, #1e3a8a, #2563eb, #38bdf8);
-      color: white;
-      padding: 56px 20px;
-    }
-
-    .container {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    nav {
-      background: white;
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    nav .nav-inner {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 14px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .brand {
-      font-weight: bold;
-      color: var(--primary);
-      text-decoration: none;
-      font-size: 18px;
-    }
-
-    nav a {
-      color: var(--text);
-      text-decoration: none;
-      margin-left: 16px;
-      font-size: 14px;
-    }
-
-    nav a:hover {
-      color: var(--primary);
-    }
-
-    .hero h1 {
-      margin: 0 0 12px;
-      font-size: 42px;
-      line-height: 1.15;
-    }
-
-    .hero p {
-      max-width: 760px;
-      margin: 0 0 24px;
-      font-size: 18px;
-      color: #e0f2fe;
-    }
-
-    .hero-actions a {
-      display: inline-block;
-      background: white;
-      color: var(--primary-dark);
-      padding: 12px 18px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-right: 10px;
-      margin-top: 8px;
-    }
-
-    main {
-      padding: 36px 0;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 22px;
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
-    }
-
-    .card h2,
-    .card h3 {
-      margin-top: 0;
-    }
-
-    .muted {
-      color: var(--muted);
-    }
-
-    .section {
-      margin-bottom: 28px;
-    }
-
-    .app-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-
-    .app-card {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 22px;
-    }
-
-    .app-card a {
-      color: var(--primary);
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .badge {
-      display: inline-block;
-      background: #eff6ff;
-      color: #1d4ed8;
-      padding: 5px 10px;
-      border-radius: 999px;
-      font-size: 12px;
-      margin-right: 6px;
-      margin-top: 6px;
-    }
-
-    footer {
-      border-top: 1px solid var(--border);
-      background: white;
-      padding: 24px 20px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    footer a {
-      color: var(--primary);
-      text-decoration: none;
-      margin-right: 12px;
-    }
-
-    @media (max-width: 800px) {
-      .grid,
-      .app-list {
-        grid-template-columns: 1fr;
-      }
-
-      .hero h1 {
-        font-size: 32px;
-      }
-
-      nav a {
-        margin-left: 0;
-        margin-right: 12px;
-      }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Emre Akin — Mobil Uygulama ve Oyun Geliştiricisi</title>
+<meta name="description" content="Emre Akin tarafından Flutter ile geliştirilen 90+ mobil uygulama ve oyun. Yapay zeka araçları, mini oyunlar, üretkenlik, dini içerik, iletişim, finans ve sistem araçları. Geliştirme rehberleri ve uygulama incelemeleri." />
+<meta name="author" content="Emre Akin" />
+<meta name="theme-color" content="#0a0e1a" />
+<link rel="canonical" href="https://emreakin.dev/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Emre Akin — Mobil Uygulama ve Oyun Geliştiricisi" />
+<meta property="og:description" content="Flutter ile geliştirilen 90+ mobil uygulama ve oyun, geliştirme rehberleri ve incelemeler." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%9A%80%3C/text%3E%3C/svg%3E" />
+<link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
 
-<nav>
-  <div class="nav-inner">
-    <a class="brand" href="/">Emre Akın</a>
-    <div>
-      <a href="/">Ana Sayfa</a>
-      <a href="/about.html">Hakkımda</a>
-      <a href="/contact.html">İletişim</a>
-      <a href="/privacy.html">Gizlilik</a>
-      <a href="/safety/child-safety.html">Çocuk Güvenliği</a>
-    </div>
-  </div>
-</nav>
-
 <header>
-  <div class="container hero">
-    <h1>Emre Akın tarafından geliştirilen mobil uygulamalar ve web projeleri</h1>
-    <p>
-      Bu web sitesi, Emre Akın’a ait uygulama ve proje sayfalarını tanıtmak,
-      kullanıcıları bilgilendirmek, gizlilik ve güvenlik politikalarına erişim sağlamak
-      amacıyla hazırlanmıştır.
-    </p>
-    <div class="hero-actions">
-      <a href="/about.html">Hakkımda</a>
-      <a href="/contact.html">İletişime Geç</a>
-    </div>
+  <div class="container nav">
+    <a href="index.html" class="brand"><span class="logo">🚀</span> Emre Akin</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" class="active">Ana Sayfa</a>
+      <a href="#apps">Uygulamalar</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html">Hakkımda</a>
+      <a href="contact.html">İletişim</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Menü">☰</button>
   </div>
 </header>
 
-<main class="container">
-
-  <section class="section grid">
-    <div class="card">
-      <h3>Geliştirici</h3>
-      <p><strong>Emre Akın</strong></p>
-      <p class="muted">
-        Mobil uygulama, web uygulaması ve yazılım projeleri geliştiren bağımsız geliştirici.
-      </p>
+<main>
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="container hero-inner">
+    <span class="eyebrow">Bağımsız Mobil Geliştirici</span>
+    <h1>Cebinize sığan <span class="grad">akıllı uygulamalar ve oyunlar</span> tasarlıyorum.</h1>
+    <p class="lead">
+      Merhaba, ben Emre Akin. Yapay zekâ destekli araçlardan keyifli mini oyunlara kadar
+      <strong>80'den fazla mobil uygulamayı</strong> tek başıma tasarlayıp geliştirdim ve
+      Google Play'de yayınladım. Bu site, ürettiğim işlerin vitrini ve mobil geliştirme üzerine
+      yazdığım rehberlerin yuvasıdır.
+    </p>
+    <div class="hero-actions">
+      <a href="#apps" class="btn btn-primary">Uygulamaları Keşfet →</a>
+      <a href="blog.html" class="btn btn-ghost">Blog Yazılarını Oku</a>
     </div>
 
-    <div class="card">
-      <h3>İletişim</h3>
+    <div class="stats">
+      <div class="stat"><div class="num grad">80+</div><div class="label">Uygulama &amp; Oyun</div></div>
+      <div class="stat"><div class="num grad">7</div><div class="label">Farklı Kategori</div></div>
+      <div class="stat"><div class="num grad">Flutter</div><div class="label">Tek Kod Tabanı</div></div>
+      <div class="stat"><div class="num grad">TR &amp; EN</div><div class="label">Dil Desteği</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== INTRO / VALUE ===================== -->
+<section style="padding-top: 24px;">
+  <div class="container">
+    <div class="section-head">
+      <h2>Neden bu kadar çok uygulama?</h2>
       <p>
-        E-posta:
-        <a href="mailto:emreakin75@hotmail.com">emreakin75@hotmail.com</a>
-      </p>
-      <p class="muted">
-        Uygulamalar, destek talepleri ve gizlilik konuları için bu adres üzerinden iletişim kurulabilir.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Proje Alanı</h3>
-      <p><strong>PixoFun Apps</strong></p>
-      <p class="muted">
-        Eğlence, iletişim, yardımcı araçlar ve kullanıcı odaklı basit mobil uygulama projeleri.
+        Ben bir fikri olabildiğince hızlı bir şekilde gerçek, dokunulabilir bir ürüne
+        dönüştürmeyi seven biriyim. Büyük ekiplerin aylar harcadığı süreçleri, sade
+        tutarak ve gereksiz karmaşadan kaçınarak tek başıma yürütüyorum. Aşağıdaki üç
+        ilke, ürettiğim her uygulamanın ortak paydası.
       </p>
     </div>
-  </section>
-
-  <section class="section card">
-    <h2>Bu site ne için kullanılıyor?</h2>
-    <p>
-      <strong>emrepixofun.github.io</strong>, Emre Akın tarafından geliştirilen uygulama ve
-      web projelerinin tanıtım sayfasıdır. Bu alanda uygulama bağlantıları, gizlilik politikaları,
-      iletişim bilgileri, çocuk güvenliği açıklamaları ve uygulamalara ait bilgilendirme sayfaları yer alır.
-    </p>
-    <p>
-      Site; Google AdSense, Google AdMob, uygulama mağazası başvuruları ve kullanıcı bilgilendirme
-      süreçlerinde resmi geliştirici web sitesi olarak kullanılabilir.
-    </p>
-  </section>
-
-  <section class="section">
-    <h2>Uygulamalar ve projeler</h2>
-
-    <div class="app-list">
-      <div class="app-card">
-        <h3>Anlık Eşleş</h3>
-        <p class="muted">
-          Kullanıcıların anlık olarak eşleşmesini ve iletişim kurmasını amaçlayan sade bir uygulama projesi.
-        </p>
+    <div class="features">
+      <div class="feature">
+        <div class="fi">⚡</div>
+        <h3>Sadelik önce gelir</h3>
         <p>
-          <span class="badge">Mobil Uygulama</span>
-          <span class="badge">İletişim</span>
+          Bir uygulamayı açtığınız anda ne yapacağınızı anlamalısınız. Gereksiz menüler,
+          karmaşık ayarlar ve dikkat dağıtan öğeler olmadan; tek bir işi iyi yapan
+          arayüzler tasarlıyorum.
         </p>
-        <a href="/myapps/anlik_esles/">Uygulama sayfasına git</a>
       </div>
-
-      <div class="app-card">
-        <h3>Projeler</h3>
-        <p class="muted">
-          Emre Akın tarafından geliştirilen farklı mobil ve web projeleri için genel tanıtım alanı.
-        </p>
+      <div class="feature">
+        <div class="fi">📴</div>
+        <h3>Mümkünse çevrimdışı</h3>
         <p>
-          <span class="badge">Web</span>
-          <span class="badge">Mobil</span>
-          <span class="badge">Yazılım</span>
+          Oyunlarımın ve araçlarımın büyük kısmı internet bağlantısı olmadan da çalışır.
+          Bu hem gizlilik hem de hız demek: veriniz cihazınızda kalır, uygulama anında açılır.
         </p>
-        <a href="/about.html">Daha fazla bilgi</a>
+      </div>
+      <div class="feature">
+        <div class="fi">🤖</div>
+        <h3>Yapay zekâ ile güçlendirilmiş</h3>
+        <p>
+          Uygun olduğu yerde modern yapay zekâ modellerini kullanıyorum: fotoğraftan kalori
+          tahmini, belge özetleme, dil öğrenme partneri ve daha fazlası. Teknolojiyi gösteriş
+          için değil, gerçek bir sorunu çözmek için ekliyorum.
+        </p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section card">
-    <h2>Yasal ve güvenlik bağlantıları</h2>
-    <p>
-      Kullanıcı güvenliği, gizlilik ve şeffaflık için aşağıdaki sayfalar hazırlanmıştır:
-    </p>
-    <ul>
-      <li><a href="/privacy.html">Gizlilik Politikası</a></li>
-      <li><a href="/safety/child-safety.html">Çocuk Güvenliği Politikası</a></li>
-      <li><a href="/contact.html">İletişim ve Destek</a></li>
-    </ul>
-  </section>
+<!-- ===================== APPS ===================== -->
+<section id="apps" style="background: var(--bg-soft);">
+  <div class="container">
+    <div class="section-head">
+      <h2>Uygulamalarım</h2>
+      <p>
+        Tamamı Flutter ile geliştirdiğim ve mağazada yayınlanan uygulamalar. Aşağıda
+        yedi kategoriye ayrılmış olarak listeliyorum; her kategori farklı bir ihtiyaca
+        cevap veriyor.
+      </p>
+    </div>
 
+    <!-- AI -->
+    <div class="cat-block">
+      <h3 class="cat-title"><span class="dot"></span> Yapay Zekâ Uygulamaları</h3>
+      <p class="cat-desc">
+        Gemini ve benzeri yapay zekâ modellerini günlük hayatın küçük ama gerçek
+        sorunlarına uyguladığım uygulamalar: öğrenmekten sağlık belgelerini anlamaya kadar.
+      </p>
+      <div class="grid">
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.akilliders" target="_blank" rel="noopener"><div class="icon">📚</div><h3>Akıllı Ders</h3><p>Yapay zekâ destekli ders çalışma asistanı; soruları açıklar, konuları özetler.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.akillidil" target="_blank" rel="noopener"><div class="icon">🗣️</div><h3>Akıllı Dil</h3><p>Yapay zekâ ile çok dilli dil öğrenme; konuşarak pratik yapmanı sağlar.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.akillikonusma" target="_blank" rel="noopener"><div class="icon">💬</div><h3>Akıllı Konuşma</h3><p>AI destekli konuşma partneri; söylediklerini anlar ve açıklamalar üretir.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.akillikalori" target="_blank" rel="noopener"><div class="icon">🍎</div><h3>Akıllı Kalori</h3><p>Yemek fotoğrafını analiz ederek kalori ve besin değeri tahmini yapar.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.saglikbelgeasistani" target="_blank" rel="noopener"><div class="icon">🩺</div><h3>Sağlık Belge Asistanı</h3><p>Sağlık belgelerini metne çevirip güvenli bir AI özeti oluşturur.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.akillifal" target="_blank" rel="noopener"><div class="icon">🔮</div><h3>Akıllı Fal</h3><p>Eğlence amaçlı, yapay zekâ destekli fal ve yorum uygulaması.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.akillistudyo" target="_blank" rel="noopener"><div class="icon">🎨</div><h3>Akıllı Stüdyo</h3><p>Yapay zekâ destekli içerik ve görsel üretim stüdyosu.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.islamai" target="_blank" rel="noopener"><div class="icon">📗</div><h3>İslam AI</h3><p>Dini sorulara yapay zekâ destekli bilgilendirici yanıtlar sunar.</p><span class="store">▶ Play Store'da Aç</span></a>
+      </div>
+    </div>
+
+    <!-- Games -->
+    <div class="cat-block">
+      <h3 class="cat-title"><span class="dot"></span> Oyunlar</h3>
+      <p class="cat-desc">
+        Refleks gerektiren arcade oyunlarından eğlenceli bulmacalara kadar geniş bir
+        koleksiyon. Çoğu çevrimdışı oynanır ve tek başına keyif verir.
+      </p>
+      <div class="grid">
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.candleblow" target="_blank" rel="noopener"><div class="icon">🕯️</div><h3>Candle Blow</h3><p>Telefonun mikrofonuna üfleyerek mumları söndürdüğün eğlenceli oyun.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.levelmaster" target="_blank" rel="noopener"><div class="icon">🎚️</div><h3>Level Master</h3><p>Jiroskopla dengelediğin, neon görselli bir denge oyunu.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.boostball" target="_blank" rel="noopener"><div class="icon">⚽</div><h3>BoostBall</h3><p>Hızlı tempolu, 1'e 1 oynanan arcade futbol oyunu.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.spectrumsnakepuzzle" target="_blank" rel="noopener"><div class="icon">🐍</div><h3>Spectrum Snake</h3><p>Bölümlü, neon temalı modern bir yılan bulmaca oyunu.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.neondropmerge" target="_blank" rel="noopener"><div class="icon">🟣</div><h3>Neon Drop Merge</h3><p>Fizik tabanlı, parçaları birleştirerek puan yaptığın bulmaca.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.pockettraffic" target="_blank" rel="noopener"><div class="icon">🚗</div><h3>Pocket Traffic</h3><p>GPS ve ivmeölçer destekli sonsuz şehir içi sürüş oyunu.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.shakeracer" target="_blank" rel="noopener"><div class="icon">🏎️</div><h3>Shake Racer</h3><p>Telefonu sallayarak kontrol ettiğin synthwave temalı yarış oyunu.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.colorchain" target="_blank" rel="noopener"><div class="icon">🔗</div><h3>Color Chain</h3><p>Renkleri ve sayıları birleştirdiğin akıcı bulmaca oyunu.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.renkpesinde" target="_blank" rel="noopener"><div class="icon">🌈</div><h3>Renk Peşinde</h3><p>Doğru rengi yakalamaya çalıştığın hızlı refleks oyunu.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.mygame.bubblepop" target="_blank" rel="noopener"><div class="icon">🫧</div><h3>Bubble Pop Mania</h3><p>Baloncukları patlatarak ilerlediğin klasik eğlence oyunu.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.mathgames" target="_blank" rel="noopener"><div class="icon">➗</div><h3>Math Arcade</h3><p>Eğlenceli matematik mini oyunlarıyla zihnini çalıştır.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.kafemucadelesi" target="_blank" rel="noopener"><div class="icon">☕</div><h3>Kafe Mücadelesi</h3><p>Kendi kafeni yönettiğin hayatta kalma simülasyon oyunu.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.fingeryoga" target="_blank" rel="noopener"><div class="icon">🧘</div><h3>Finger Yoga</h3><p>Birden çok parmağını hedeflerde tutman gereken çok dokunuşlu bulmaca.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.glowupstory" target="_blank" rel="noopener"><div class="icon">💄</div><h3>Glow Up Story</h3><p>Çevrimdışı makyaj ve moda podyumu temalı eğlenceli oyun.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.kelimeyolu" target="_blank" rel="noopener"><div class="icon">🟩</div><h3>Kelime Yolu</h3><p>Türkçe kelime bulmaca oyunu; harfleri birleştirerek kelime kur.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.birkelimebirislem" target="_blank" rel="noopener"><div class="icon">🔢</div><h3>Bir Kelime Bir İşlem</h3><p>Klasik kelime ve sayı yarışması temalı zekâ oyunu.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.yasakkelime" target="_blank" rel="noopener"><div class="icon">🚫</div><h3>Yasak Kelime</h3><p>Animasyonlu, çevrimdışı oynanan Türkçe Tabu tarzı takım oyunu.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.minimasallar" target="_blank" rel="noopener"><div class="icon">📖</div><h3>Mini Masallar</h3><p>Kararlarınla yön verdiğin interaktif seç-kendi-maceran hikâyeleri.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.random_life" target="_blank" rel="noopener"><div class="icon">🎰</div><h3>Hayat Çarkı</h3><p>Rastgele hayat profili ve senaryo üreten, paylaşılabilir eğlence oyunu.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.basitsanscarki" target="_blank" rel="noopener"><div class="icon">🎡</div><h3>Şans Çarkı</h3><p>Kendi seçeneklerini girip çevirdiğin dinamik şans çarkı.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.decidewar" target="_blank" rel="noopener"><div class="icon">⚔️</div><h3>Karar Savaşları</h3><p>İki seçenekten birini seçtiğin, sosyal karşılaştırma oyunu.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.minigames" target="_blank" rel="noopener"><div class="icon">🎲</div><h3>MiniGames Hub</h3><p>Tek bir uygulamada toplanmış 12 çevrimdışı mini oyun.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.miniplay50" target="_blank" rel="noopener"><div class="icon">🕹️</div><h3>MiniPlay 50</h3><p>50 mini oyun ve aracı bir araya getiren dev koleksiyon.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.miniplay20" target="_blank" rel="noopener"><div class="icon">🎮</div><h3>MiniPlay 20</h3><p>Modern arayüzlü, 1'e 1 oynanabilen mini oyun platformu.</p><span class="store">▶ Play Store'da Aç</span></a>
+      </div>
+    </div>
+
+    <!-- Productivity -->
+    <div class="cat-block">
+      <h3 class="cat-title"><span class="dot"></span> Üretkenlik ve Yaşam</h3>
+      <p class="cat-desc">
+        Gündelik hayatı kolaylaştıran küçük araçlar: not almak, ses kaydını yazıya
+        dökmek, alışkanlık takibi, spor ve daha fazlası.
+      </p>
+      <div class="grid">
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.tapnote" target="_blank" rel="noopener"><div class="icon">📝</div><h3>TapNote</h3><p>Her karakterde otomatik kaydeden, minimal ve çevrimdışı not defteri.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.sesleyaz" target="_blank" rel="noopener"><div class="icon">🎤</div><h3>SesleYaz</h3><p>Konuşur konuşmaz metne çeviren ve otomatik kaydeden ses notu aracı.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.paramkacti.param_kacti" target="_blank" rel="noopener"><div class="icon">💸</div><h3>Param Kaçtı</h3><p>Çevrimdışı çalışan, harcamalarını takip eden sade tasarruf sayacı.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.studybloom" target="_blank" rel="noopener"><div class="icon">🌱</div><h3>StudyBloom</h3><p>Öğrenciler için akıllı ders planlayıcı ve not defteri.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emrepixofun.focusly" target="_blank" rel="noopener"><div class="icon">🎯</div><h3>Focusly</h3><p>Odaklanma ve verimlilik için tasarlanmış sade uygulama.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emrepixofun.moodly" target="_blank" rel="noopener"><div class="icon">😌</div><h3>Moodly</h3><p>Günlük ruh halini kaydedip eğilimlerini gösteren takip uygulaması.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.nefesal" target="_blank" rel="noopener"><div class="icon">🌬️</div><h3>Nefes Al</h3><p>Rehberli nefes ve rahatlama egzersizleri sunan uygulama.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.sporkocum" target="_blank" rel="noopener"><div class="icon">💪</div><h3>Spor Koçum</h3><p>Kişisel antrenman rehberi ve spor takip uygulaması.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.moda" target="_blank" rel="noopener"><div class="icon">👗</div><h3>Bugün Ne Giysem</h3><p>Hava ve dolabına göre günlük kombin önerisi üreten uygulama.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.instakit" target="_blank" rel="noopener"><div class="icon">📸</div><h3>InstaKit</h3><p>Instagram içerik üreticileri için pratik yardımcı araçlar seti.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.akilliwidget" target="_blank" rel="noopener"><div class="icon">🧩</div><h3>Akıllı Widget</h3><p>Ana ekranını zenginleştiren kullanışlı widget koleksiyonu.</p><span class="store">▶ Play Store'da Aç</span></a>
+      </div>
+    </div>
+
+    <!-- Religious -->
+    <div class="cat-block">
+      <h3 class="cat-title"><span class="dot"></span> Dini Uygulamalar</h3>
+      <p class="cat-desc">
+        İbadet hayatını kolaylaştırmaya yönelik sade ve doğru sonuç hedefleyen araçlar:
+        namaz vakitleri, kıble, zikir, Kur'an ve daha fazlası.
+      </p>
+      <div class="grid">
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.namaz" target="_blank" rel="noopener"><div class="icon">🕌</div><h3>Namaz Vakitleri</h3><p>Konumuna göre günlük namaz vakitlerini gösteren uygulama.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.kiblepusulasi" target="_blank" rel="noopener"><div class="icon">🧭</div><h3>Kıble Pusulası</h3><p>Sade, şık ve doğru sonuç hedefleyen kıble pusulası.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.dumanemre.zikirmatik" target="_blank" rel="noopener"><div class="icon">📿</div><h3>Zikirmatik</h3><p>Sade ve işlevsel dijital zikirmatik (tesbih sayacı).</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.esmaulhusnaogren" target="_blank" rel="noopener"><div class="icon">📜</div><h3>Esmaül Hüsna</h3><p>Allah'ın 99 ismini öğrenip quiz ile pekiştirdiğin uygulama.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.kurandinle" target="_blank" rel="noopener"><div class="icon">🎧</div><h3>Kuran Dinle</h3><p>Kur'an okuma ve dinleme uygulaması.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.dini_app" target="_blank" rel="noopener"><div class="icon">☪️</div><h3>Dini Uygulama</h3><p>Namaz vakitleri, tesbih ve günün ayetini bir arada sunar.</p><span class="store">▶ Play Store'da Aç</span></a>
+      </div>
+    </div>
+
+    <!-- Communication -->
+    <div class="cat-block">
+      <h3 class="cat-title"><span class="dot"></span> İletişim ve Paylaşım</h3>
+      <p class="cat-desc">
+        Çoğu sunucu kullanmadan, doğrudan cihazdan cihaza (P2P) çalışan iletişim
+        araçları: sesli/görüntülü arama, şifreli mesajlaşma ve dosya paylaşımı.
+      </p>
+      <div class="grid">
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.aloo" target="_blank" rel="noopener"><div class="icon">📞</div><h3>Aloo</h3><p>WebRTC tabanlı sesli ve görüntülü arama uygulaması.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.anlikesles" target="_blank" rel="noopener"><div class="icon">🔀</div><h3>Anlık Eşleş</h3><p>Backend olmadan anlık eşleşmeli sohbet, ses ve görüntü.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.anlikoyunarenasi" target="_blank" rel="noopener"><div class="icon">🕹️</div><h3>Anlık Oyun Arenası</h3><p>P2P oda tabanlı, arkadaşlarınla oynadığın mini oyunlar.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.securetalk" target="_blank" rel="noopener"><div class="icon">🔒</div><h3>SecureTalk</h3><p>WebRTC üzerinden şifreli mesajlaşma ve arama.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.safemessage" target="_blank" rel="noopener"><div class="icon">🛡️</div><h3>Güvenli Mesaj</h3><p>Gizliliğe önem veren güvenli mesajlaşma uygulaması.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.sesver" target="_blank" rel="noopener"><div class="icon">🔊</div><h3>Ses Ver</h3><p>FCM tabanlı şifreli mesaj ve WebRTC sesli görüşme.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.direktgonder" target="_blank" rel="noopener"><div class="icon">📤</div><h3>Direkt Gönder</h3><p>Sunucuya yüklemeden, doğrudan P2P dosya aktarımı.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.ortaktuval" target="_blank" rel="noopener"><div class="icon">🎨</div><h3>Ortak Tuval</h3><p>Gerçek zamanlı, birlikte çizim yaptığın paylaşımlı tuval.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.icimdekaldimail" target="_blank" rel="noopener"><div class="icon">💌</div><h3>İçimde Kaldı</h3><p>Kategori bazlı, anonim hazır e-posta gönderme uygulaması.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.yakindayim" target="_blank" rel="noopener"><div class="icon">📡</div><h3>Yakındayım</h3><p>İnternetsiz, afet anında yakın bağlantı ve yardım sinyali.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.codeshare" target="_blank" rel="noopener"><div class="icon">🔗</div><h3>CodeShare</h3><p>Kısa kod ile cihazlar arası hızlı metin paylaşımı.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.cepgorus" target="_blank" rel="noopener"><div class="icon">📹</div><h3>Cep Görüş</h3><p>Düşük veri kullanımıyla görüntülü iletişim uygulaması.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.fisiltiduvari" target="_blank" rel="noopener"><div class="icon">🤫</div><h3>Fısıltı Duvarı</h3><p>Anonim mesaj ve paylaşım duvarı uygulaması.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.birlikte" target="_blank" rel="noopener"><div class="icon">👥</div><h3>Birlikte</h3><p>Yakınlarınla bağlantı kurmanı sağlayan iletişim uygulaması.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.mymessaging2" target="_blank" rel="noopener"><div class="icon">💭</div><h3>Mesajlaşma</h3><p>FCM tabanlı, çevrimiçi durum destekli sade sohbet uygulaması.</p><span class="store">▶ Play Store'da Aç</span></a>
+      </div>
+    </div>
+
+    <!-- Finance -->
+    <div class="cat-block">
+      <h3 class="cat-title"><span class="dot"></span> Finans ve Tahmin</h3>
+      <p class="cat-desc">
+        Borsa, döviz ve kripto takibinden eğlence amaçlı tahmin oyunlarına kadar
+        finansla ilgili araçlar. (Yatırım tavsiyesi değildir.)
+      </p>
+      <div class="grid">
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.borsatahminai" target="_blank" rel="noopener"><div class="icon">📈</div><h3>Borsa Tahmin AI</h3><p>BIST hisseleri için yapay zekâ destekli günlük analiz uygulaması.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.miniborsa" target="_blank" rel="noopener"><div class="icon">📊</div><h3>MiniBorsa</h3><p>Hisse ve piyasa takibi yapabileceğin sade borsa uygulaması.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.currency" target="_blank" rel="noopener"><div class="icon">💱</div><h3>Currency</h3><p>Güncel döviz ve para birimi kurlarını takip etme aracı.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.sanalkripto" target="_blank" rel="noopener"><div class="icon">₿</div><h3>Sanal Kripto TRY</h3><p>Gerçek para riski olmadan USDT-TRY işlem simülasyonu.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.football" target="_blank" rel="noopener"><div class="icon">⚽</div><h3>Gol Tahmin</h3><p>Futbol maçları için skor ve sonuç tahmini uygulaması.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.footballflash" target="_blank" rel="noopener"><div class="icon">🏟️</div><h3>Football Flash</h3><p>Canlı skor ve futbol bilgileri sunan hızlı uygulama.</p><span class="store">▶ Play Store'da Aç</span></a>
+      </div>
+    </div>
+
+    <!-- Tools -->
+    <div class="cat-block">
+      <h3 class="cat-title"><span class="dot"></span> Sistem ve Araçlar</h3>
+      <p class="cat-desc">
+        Cihazını daha iyi tanımanı ve kontrol etmeni sağlayan pratik yardımcı araçlar:
+        ağ testi, TV kumandası, cihaz bilgisi ve haber akışı.
+      </p>
+      <div class="grid">
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.cihazbilgisi" target="_blank" rel="noopener"><div class="icon">📱</div><h3>Cihaz Bilgisi</h3><p>Android cihazına dair detaylı ve sade bilgi paneli.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.netkontrol" target="_blank" rel="noopener"><div class="icon">🌐</div><h3>Net Kontrol</h3><p>İnternet bağlantısı, DNS, IP, gecikme ve hız testi aracı.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.lgkumandam" target="_blank" rel="noopener"><div class="icon">📺</div><h3>LG Kumandam</h3><p>Yerel Wi-Fi üzerinden LG webOS TV uzaktan kumandası.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.samsungkumandam" target="_blank" rel="noopener"><div class="icon">📡</div><h3>Samsung Kumandam</h3><p>Yerel ağ üzerinden Samsung Smart TV uzaktan kumandası.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.eczane" target="_blank" rel="noopener"><div class="icon">💊</div><h3>Nöbetçi Eczane</h3><p>Konumuna en yakın nöbetçi eczaneyi gösteren uygulama.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.news" target="_blank" rel="noopener"><div class="icon">📰</div><h3>Gündem TR</h3><p>Türkiye'den son dakika haberleri toplayan akış uygulaması.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.bugunneoldu" target="_blank" rel="noopener"><div class="icon">🗞️</div><h3>Bugün Ne Oldu</h3><p>Sade ve hızlı RSS tabanlı haber akışı.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.smartdice" target="_blank" rel="noopener"><div class="icon">🎲</div><h3>Smart Dice</h3><p>Çok yönlü dijital zar ve karar verme aracı.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.miniuygulamamerkezi" target="_blank" rel="noopener"><div class="icon">🧰</div><h3>Mini Uygulama Merkezi</h3><p>Web uygulamalarını tek çatı altında açan pratik merkez.</p><span class="store">▶ Play Store'da Aç</span></a>
+        <a class="app-card" href="https://play.google.com/store/apps/details?id=com.emre.nuar" target="_blank" rel="noopener"><div class="icon">📘</div><h3>Aile Rehberi</h3><p>Aile için hazırlanmış pratik bilgi ve rehber uygulaması.</p><span class="store">▶ Play Store'da Aç</span></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== BLOG TEASER ===================== -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <h2>Blog'dan Son Yazılar</h2>
+      <p>Mobil geliştirme, tasarım kararlarım ve uygulamalarımın arkasındaki hikâyeler üzerine yazıyorum.</p>
+    </div>
+    <div class="post-list">
+      <article class="post-card">
+        <span class="ptag">Geliştirme</span>
+        <h3><a href="blog/tek-kisi-90-uygulama.html">Tek başıma 90 uygulamayı nasıl geliştirdim?</a></h3>
+        <p>Bir kişinin bu kadar çok uygulamayı sürdürebilmesinin sırrı: tekrar kullanılan kod, şablonlar ve acımasız sadelik.</p>
+        <a class="read" href="blog/tek-kisi-90-uygulama.html">Yazıyı oku →</a>
+      </article>
+      <article class="post-card">
+        <span class="ptag">Teknoloji</span>
+        <h3><a href="blog/neden-flutter.html">Neden tüm uygulamalarımı Flutter ile yazıyorum?</a></h3>
+        <p>Tek kod tabanından iki platforma çıkmanın getirdiği özgürlük ve dikkat etmen gereken tuzaklar.</p>
+        <a class="read" href="blog/neden-flutter.html">Yazıyı oku →</a>
+      </article>
+      <article class="post-card">
+        <span class="ptag">Tasarım</span>
+        <h3><a href="blog/cevrimdisi-uygulama-tasarimi.html">Çevrimdışı çalışan uygulama tasarlamanın faydaları</a></h3>
+        <p>Neden oyunlarımın çoğu internet istemiyor? Gizlilik, hız ve kullanıcı güveni üzerine.</p>
+        <a class="read" href="blog/cevrimdisi-uygulama-tasarimi.html">Yazıyı oku →</a>
+      </article>
+      <article class="post-card">
+        <span class="ptag">Yapay Zekâ</span>
+        <h3><a href="blog/yapay-zeka-mobil.html">Yapay zekâyı mobil uygulamalara akıllıca eklemek</a></h3>
+        <p>AI'yı gösteriş için değil, gerçek bir sorunu çözmek için kullanmanın yolları ve örneklerim.</p>
+        <a class="read" href="blog/yapay-zeka-mobil.html">Yazıyı oku →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA ===================== -->
+<section>
+  <div class="container">
+    <div class="cta">
+      <h2>Bir fikrin mi var, yoksa geri bildirim mi?</h2>
+      <p>Uygulamalarım hakkında soruların, hata bildirimlerin veya iş birliği önerilerin için bana ulaş.</p>
+      <a href="contact.html" class="btn btn-primary">İletişime Geç</a>
+    </div>
+  </div>
+</section>
 </main>
 
 <footer>
-  <div class="container">
-    <p>© 2026 Emre Akın. Tüm hakları saklıdır.</p>
-    <p>
-      <a href="/">Ana Sayfa</a>
-      <a href="/about.html">Hakkımda</a>
-      <a href="/contact.html">İletişim</a>
-      <a href="/privacy.html">Gizlilik</a>
-      <a href="/safety/child-safety.html">Çocuk Güvenliği</a>
-    </p>
+  <div class="container footer-inner">
+    <div class="footer-copy">© <span id="year">2026</span> Emre Akin · Tüm hakları saklıdır.</div>
+    <div class="footer-links">
+      <a href="index.html">Ana Sayfa</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html">Hakkımda</a>
+      <a href="contact.html">İletişim</a>
+      <a href="privacy.html">Gizlilik</a>
+      <a href="terms.html">Şartlar</a>
+    </div>
   </div>
 </footer>
 
+<!-- AdSense onayı sonrası bu satırı <head> içine taşıyın ve client kodunu güncelleyin:
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+<script src="assets/main.js"></script>
 </body>
 </html>

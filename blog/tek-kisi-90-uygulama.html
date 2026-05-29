@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tek başıma 90 uygulamayı nasıl geliştirdim? — Emre Akin</title>
+<meta name="description" content="Bağımsız bir geliştiricinin tek başına 90'dan fazla mobil uygulamayı sürdürebilmesinin arkasındaki sistem: tekrar kullanılabilir kod, şablonlar, otomasyon ve sadelik felsefesi." />
+<meta name="author" content="Emre Akin" />
+<meta name="theme-color" content="#0a0e1a" />
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="../index.html" class="brand"><span class="logo">🚀</span> Emre Akin</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="../index.html">Ana Sayfa</a>
+      <a href="../index.html#apps">Uygulamalar</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../about.html">Hakkımda</a>
+      <a href="../contact.html">İletişim</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Menü">☰</button>
+  </div>
+</header>
+
+<main>
+<article>
+  <div class="container">
+    <div class="prose">
+      <p class="crumb"><a href="../blog.html">← Blog</a> · Geliştirme</p>
+      <h1>Tek başıma 90 uygulamayı nasıl geliştirdim?</h1>
+      <p class="meta">Emre Akin tarafından · Mobil Geliştirme</p>
+
+      <p class="lead-p">
+        "Tek başına 90 uygulama mı? Bu nasıl mümkün?" Bu soruyu en çok duyduğum sorulardan
+        biri. Cevap, süper bir yetenekte değil; tekrar eden işleri sistemleştirmekte ve
+        gereksiz olan her şeyi acımasızca kesmekte yatıyor. Bu yazıda kullandığım üretim
+        sistemini olabildiğince açık anlatmaya çalışacağım.
+      </p>
+
+      <h2>1. Her şey tekrar kullanılabilir parçalarla başlar</h2>
+      <p>
+        Yeni bir uygulamaya sıfırdan başlamıyorum. Yıllar içinde sürekli ihtiyaç duyduğum
+        parçaları ayrı, bağımsız modüller haline getirdim: tema ve renk sistemi, ayarlar
+        ekranı, çok dil desteği, reklam entegrasyonu, derecelendirme isteği, veri saklama
+        katmanı ve temel navigasyon. Yeni bir proje açtığımda bu modülleri kopyalayıp
+        bağlıyorum; böylece "her uygulamada olması gereken" sıkıcı kısımlar bir saatten kısa
+        sürede hazır oluyor.
+      </p>
+      <p>
+        Bu yaklaşımın gizli faydası tutarlılık. Bir modülde bir hata bulduğumda veya bir
+        iyileştirme yaptığımda, bunu tüm yeni projelere taşıyabiliyorum. Zamanla bu parçalar
+        olgunlaşıyor ve giderek daha az sorun çıkarıyor.
+      </p>
+
+      <h2>2. Şablon zihniyeti</h2>
+      <p>
+        Geliştirdiğim oyunların büyük kısmı belirli "iskeletler" üzerine kurulu. Örneğin
+        kart oyunlarım (Batak, Pişti, King, 101 Okey) ortak bir oyun döngüsü, bot mantığı ve
+        skor sistemi paylaşır. Bir kez sağlam bir kart oyunu altyapısı kurduğunuzda, ikinci
+        ve üçüncü kart oyununu çıkarmak çok daha hızlıdır. Aynısı masa oyunları, bulmacalar
+        ve basit arcade oyunları için de geçerli.
+      </p>
+      <blockquote>
+        İlk benzer uygulamayı yapmak haftalar alır. İkincisi günler, üçüncüsü saatler alır.
+        İşte ölçeklenme buradan gelir.
+      </blockquote>
+
+      <h2>3. Acımasız sadelik</h2>
+      <p>
+        Tek kişilik bir stüdyonun en büyük düşmanı kapsam şişmesidir. Her uygulamada
+        "şunu da eklesem güzel olur" diyebileceğim onlarca özellik vardır. Ama bunların çoğuna
+        hayır diyorum. Çünkü her yeni özellik test edilmesi, sürdürülmesi ve kullanıcıya
+        anlatılması gereken yeni bir yük getirir.
+      </p>
+      <p>
+        Bunun yerine her uygulamanın <strong>tek bir net işi</strong> olmasını sağlıyorum.
+        TapNote sadece hızlı not alır. Zikirmatik sadece sayar. Net Kontrol sadece bağlantıyı
+        test eder. Bu netlik hem geliştirmeyi hızlandırıyor hem de kullanıcının uygulamayı
+        anında anlamasını sağlıyor.
+      </p>
+
+      <h2>4. Yayın sürecini otomatikleştirmek</h2>
+      <p>
+        Bir uygulamayı kodlamak işin yarısı; mağazaya çıkarmak diğer yarısı. İkon üretimi,
+        ekran görüntüleri, sürüm imzalama ve mağaza listesi gibi tekrar eden adımları
+        mümkün olduğunca standartlaştırdım. Aynı boyut şablonlarını, aynı kontrol listesini
+        her projede kullanıyorum. Böylece "bu sefer neyi unuttum?" stresini ortadan kaldırıyorum.
+      </p>
+
+      <h2>5. Mükemmeli beklememek</h2>
+      <p>
+        Belki de en önemli ders bu: bir uygulamayı "mükemmel" olana kadar bekletirsem asla
+        yayınlayamam. Bunun yerine, kullanıcıya gerçekten değer veren sağlam bir ilk sürümü
+        çıkarıp, sonra geri bildirime göre geliştiriyorum. Gerçek kullanıcıların elinde olan
+        ortalama bir uygulama, bilgisayarımda bekleyen kusursuz bir uygulamadan kat kat
+        değerlidir.
+      </p>
+
+      <h2>Sonuç</h2>
+      <p>
+        90 uygulama bir gecede olmadı; yıllara yayılan, her projede biraz daha iyileşen bir
+        sürecin sonucu. Eğer siz de çok sayıda küçük ürün geliştirmek istiyorsanız, tavsiyem
+        net: tekrar eden her şeyi sistemleştirin, kapsamı küçük tutun ve yayınlamaktan korkmayın.
+      </p>
+      <p>
+        Geliştirdiğim uygulamaların tamamını <a href="../index.html#apps">ana sayfadaki listede</a>
+        görebilir, başka konularda yazdıklarımı <a href="../blog.html">blog sayfasından</a>
+        okuyabilirsiniz.
+      </p>
+    </div>
+  </div>
+</article>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-copy">© <span id="year">2026</span> Emre Akin · Tüm hakları saklıdır.</div>
+    <div class="footer-links">
+      <a href="../index.html">Ana Sayfa</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../about.html">Hakkımda</a>
+      <a href="../contact.html">İletişim</a>
+      <a href="../privacy.html">Gizlilik</a>
+      <a href="../terms.html">Şartlar</a>
+    </div>
+  </div>
+</footer>
+<script src="../assets/main.js"></script>
+</body>
+</html>

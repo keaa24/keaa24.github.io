@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Neden tüm uygulamalarımı Flutter ile yazıyorum? — Emre Akin</title>
+<meta name="description" content="Bağımsız bir geliştirici neden Flutter'ı seçer? Tek kod tabanı, hız, performans ve dikkat edilmesi gereken sınırlamalar üzerine deneyim aktarımı." />
+<meta name="author" content="Emre Akin" />
+<meta name="theme-color" content="#0a0e1a" />
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="../index.html" class="brand"><span class="logo">🚀</span> Emre Akin</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="../index.html">Ana Sayfa</a>
+      <a href="../index.html#apps">Uygulamalar</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../about.html">Hakkımda</a>
+      <a href="../contact.html">İletişim</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Menü">☰</button>
+  </div>
+</header>
+
+<main>
+<article>
+  <div class="container">
+    <div class="prose">
+      <p class="crumb"><a href="../blog.html">← Blog</a> · Teknoloji</p>
+      <h1>Neden tüm uygulamalarımı Flutter ile yazıyorum?</h1>
+      <p class="meta">Emre Akin tarafından · Teknoloji</p>
+
+      <p class="lead-p">
+        Tek başına çalışan bir geliştirici için en kıymetli kaynak zamandır. Aynı uygulamayı
+        iki kez (biri Android, biri iOS için) yazmak, bu kaynağı ikiye katlayarak harcamak
+        demektir. Flutter'ı seçmemin temel sebebi tam olarak bu sorunu ortadan kaldırması.
+      </p>
+
+      <h2>Tek kod tabanı, iki platform</h2>
+      <p>
+        Flutter ile yazdığım kod, hem Android hem iOS üzerinde aynı şekilde çalışıyor. Bu
+        sadece "kod paylaşımı" değil; arayüz, animasyon, davranış ve iş mantığının tamamı
+        tek yerden yönetiliyor. Bir özellik eklediğimde iki platformda da aynı anda hazır
+        oluyor. Bir hatayı düzelttiğimde her iki platformda da düzeliyor. 90'dan fazla
+        uygulamayı tek başıma sürdürebilmemin en büyük sebeplerinden biri bu.
+      </p>
+
+      <h2>Hızlı geliştirme döngüsü</h2>
+      <p>
+        Flutter'ın "hot reload" özelliği, yaptığım değişikliği saniyeler içinde çalışan
+        uygulamada görmemi sağlıyor. Bir rengi değiştirdiğimde, bir boşluğu ayarladığımda
+        uygulamayı baştan derlemek zorunda kalmıyorum. Bu küçük gibi görünen ayrıntı, gün
+        içinde yüzlerce kez tekrarlandığında muazzam bir zaman kazancına dönüşüyor ve
+        tasarımla deneme yapmayı çok daha keyifli hale getiriyor.
+      </p>
+
+      <h2>Oyunlar için Flame</h2>
+      <p>
+        Sadece klasik uygulamalar değil, oyunlarımın çoğunu da Flutter ekosistemiyle
+        geliştiriyorum. Flame oyun motoru, Flutter üzerine kurulu olduğu için aynı dili ve
+        aynı araçları kullanmaya devam edebiliyorum. Ice Tower ve Apex Street Racing gibi
+        arcade oyunlarım bu sayede ortaya çıktı. Ayrı bir oyun motoru öğrenmek yerine,
+        zaten bildiğim ekosistemde kalmak benim için büyük avantaj.
+      </p>
+
+      <blockquote>
+        Doğru araç, size yeni bir şey öğretmekten çok, bildiğiniz şeyi daha hızlı yapmanızı
+        sağlayan araçtır.
+      </blockquote>
+
+      <h2>Tutarlı görsel dil</h2>
+      <p>
+        Flutter kendi çizim motoruyla her pikseli doğrudan kontrol ettiği için, tasarladığım
+        arayüz farklı cihazlarda neredeyse birebir aynı görünüyor. Bu, "şu telefonda neden
+        farklı duruyor?" sorularıyla daha az uğraşmam anlamına geliyor. Tüm uygulamalarımda
+        ortak bir tema sistemi kullanmamı da kolaylaştırıyor.
+      </p>
+
+      <h2>Peki sınırları neler?</h2>
+      <p>
+        Flutter mükemmel değil ve dürüst olmak gerekirse her senaryo için en iyi seçim de
+        değil. Dikkat ettiğim birkaç nokta var:
+      </p>
+      <ul>
+        <li><strong>Uygulama boyutu:</strong> Flutter uygulamaları, tamamen yerel (native) yazılmış basit uygulamalara göre biraz daha büyük olabiliyor. Çok basit araçlarda bunu göz önünde bulunduruyorum.</li>
+        <li><strong>Platforma özel özellikler:</strong> Bazı çok özel donanım veya işletim sistemi özelliklerine erişmek için yine de platforma özgü köprü kod yazmak gerekebiliyor.</li>
+        <li><strong>Yeni platform sürümleri:</strong> İşletim sistemleri güncellendiğinde bazen kütüphanelerin uyum sağlamasını beklemek gerekebiliyor.</li>
+      </ul>
+      <p>
+        Bu sınırların hiçbiri benim için Flutter'dan vazgeçmeyi gerektirecek kadar büyük
+        olmadı. Geliştirdiğim uygulama türleri için kazandırdığı hız, getirdiği küçük
+        bedellerden çok daha değerli.
+      </p>
+
+      <h2>Sonuç</h2>
+      <p>
+        Eğer tek başınıza veya küçük bir ekiple birden fazla platforma uygulama çıkarmak
+        istiyorsanız, Flutter ciddi olarak değerlendirmeniz gereken bir araç. Bana yıllar
+        içinde binlerce saat kazandırdı ve bu yazıda anlattığım iş akışının temelini
+        oluşturuyor. Tek kişilik üretim sürecimi merak ediyorsanız
+        <a href="tek-kisi-90-uygulama.html">"Tek başıma 90 uygulamayı nasıl geliştirdim?"</a>
+        yazıma göz atabilirsiniz.
+      </p>
+    </div>
+  </div>
+</article>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-copy">© <span id="year">2026</span> Emre Akin · Tüm hakları saklıdır.</div>
+    <div class="footer-links">
+      <a href="../index.html">Ana Sayfa</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../about.html">Hakkımda</a>
+      <a href="../contact.html">İletişim</a>
+      <a href="../privacy.html">Gizlilik</a>
+      <a href="../terms.html">Şartlar</a>
+    </div>
+  </div>
+</footer>
+<script src="../assets/main.js"></script>
+</body>
+</html>

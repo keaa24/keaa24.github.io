@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Çevrimdışı çalışan uygulama tasarlamanın faydaları — Emre Akin</title>
+<meta name="description" content="Neden mobil oyun ve araçların çoğu internet olmadan çalışmalı? Gizlilik, hız, pil ömrü, güvenilirlik ve kullanıcı güveni açısından çevrimdışı tasarımın avantajları." />
+<meta name="author" content="Emre Akin" />
+<meta name="theme-color" content="#0a0e1a" />
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="../index.html" class="brand"><span class="logo">🚀</span> Emre Akin</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="../index.html">Ana Sayfa</a>
+      <a href="../index.html#apps">Uygulamalar</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../about.html">Hakkımda</a>
+      <a href="../contact.html">İletişim</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Menü">☰</button>
+  </div>
+</header>
+
+<main>
+<article>
+  <div class="container">
+    <div class="prose">
+      <p class="crumb"><a href="../blog.html">← Blog</a> · Tasarım</p>
+      <h1>Çevrimdışı çalışan uygulama tasarlamanın faydaları</h1>
+      <p class="meta">Emre Akin tarafından · Tasarım</p>
+
+      <p class="lead-p">
+        Geliştirdiğim oyunların ve araçların büyük kısmı internet bağlantısı olmadan çalışır.
+        Bu bilinçli bir tasarım kararı. "Her şey buluta bağlı olsun" çağında neden tersi yönde
+        ilerlediğimi ve bunun kullanıcıya neler kazandırdığını anlatmak istiyorum.
+      </p>
+
+      <h2>1. Gizlilik en baştan gelir</h2>
+      <p>
+        Bir uygulama veriyi sunucuya göndermiyorsa, o veri sızdırılamaz. Çevrimdışı tasarımın
+        en güçlü yanı bu. Notlarınız, tasbih sayacınız, harcama kayıtlarınız ya da oyun
+        skorlarınız cihazınızda kalır. Kullanıcıya "verinizi topluyoruz ama merak etmeyin,
+        koruyoruz" demek yerine, "veriniz zaten bizde değil" diyebilmek çok daha güçlü bir
+        gizlilik vaadidir.
+      </p>
+
+      <h2>2. Anında açılır, anında çalışır</h2>
+      <p>
+        Çevrimdışı bir uygulama, ağ isteği beklemez. Açtığınız an kullanıma hazırdır. Yükleniyor
+        çarkı, "bağlantı hatası" ekranı veya yavaş ağda donan arayüzler yoktur. Özellikle
+        sık açılıp kapatılan küçük araçlarda (bir not almak, hızlı bir sayım yapmak) bu hız
+        farkı kullanıcı deneyimini doğrudan belirler.
+      </p>
+
+      <blockquote>
+        En iyi yükleme ekranı, hiç görünmeyen yükleme ekranıdır.
+      </blockquote>
+
+      <h2>3. Her yerde güvenilir</h2>
+      <p>
+        Uçakta, metroda, asansörde, sinyalin zayıf olduğu bir kırsalda ya da yurt dışında
+        veri paketi olmadan... Çevrimdışı uygulama bu durumların hepsinde aynı şekilde çalışır.
+        Kullanıcı uygulamanıza güvenir çünkü onu hayal kırıklığına uğratmaz. Bir oyunun tam
+        heyecanlı anında "bağlantı koptu" yazısıyla karşılaşmak kadar can sıkıcı az şey vardır.
+      </p>
+
+      <h2>4. Pil ve veri dostu</h2>
+      <p>
+        Sürekli ağ isteği yapan uygulamalar hem pili hem de mobil veriyi tüketir. Çevrimdışı
+        çalışan bir uygulama, telefonun radyosunu boş yere meşgul etmez. Bu, kullanıcının
+        farkında olmadan takdir ettiği bir incelik: telefonun şarjı daha uzun dayanır,
+        veri paketi boşa gitmez.
+      </p>
+
+      <h2>5. Daha basit, daha sağlam kod</h2>
+      <p>
+        Geliştirici tarafında da büyük bir avantaj var. Sunucu olmadığında; kimlik doğrulama,
+        senkronizasyon, çevrimdışı/çevrimiçi durum yönetimi ve sunucu maliyeti gibi koca bir
+        karmaşık katman ortadan kalkar. Bu, daha az hata, daha hızlı geliştirme ve sürdürmesi
+        daha kolay bir uygulama demektir. Tek başına çalışan bir geliştirici için bu sadeleşme
+        paha biçilemez.
+      </p>
+
+      <h2>Peki her şey çevrimdışı mı olmalı?</h2>
+      <p>
+        Hayır. Bazı uygulamaların doğası gereği internete ihtiyacı var: namaz vakitlerini
+        konuma göre hesaplamak, döviz kurunu almak, haberleri getirmek ya da arkadaşınızla
+        görüntülü konuşmak gibi. Bu durumlarda da bir denge kuruyorum: mümkün olan veriyi
+        cihazda önbelleğe alıyorum ki bağlantı kesildiğinde uygulama tamamen kullanılmaz
+        hale gelmesin. Yani soru "çevrimdışı mı, çevrimiçi mi" değil; "bu özellik gerçekten
+        internet gerektiriyor mu?" sorusu.
+      </p>
+
+      <h2>Sonuç</h2>
+      <p>
+        Çevrimdışı tasarım, kullanıcıya saygının somut bir göstergesi: hızını, gizliliğini,
+        pilini ve verisini düşünmek. Bir özelliği eklemeden önce kendime hep şunu soruyorum:
+        "Bunun gerçekten sunucuya ihtiyacı var mı?" Cevap çoğu zaman hayır oluyor ve uygulama
+        bu sayede daha iyi bir hale geliyor.
+      </p>
+      <p>
+        Çevrimdışı çalışan oyun ve araçlarımı <a href="../index.html#apps">ana sayfadan</a>
+        inceleyebilir; teknoloji tercihlerimi
+        <a href="neden-flutter.html">Flutter yazımda</a> okuyabilirsiniz.
+      </p>
+    </div>
+  </div>
+</article>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-copy">© <span id="year">2026</span> Emre Akin · Tüm hakları saklıdır.</div>
+    <div class="footer-links">
+      <a href="../index.html">Ana Sayfa</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../about.html">Hakkımda</a>
+      <a href="../contact.html">İletişim</a>
+      <a href="../privacy.html">Gizlilik</a>
+      <a href="../terms.html">Şartlar</a>
+    </div>
+  </div>
+</footer>
+<script src="../assets/main.js"></script>
+</body>
+</html>

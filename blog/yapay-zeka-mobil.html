@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Yapay zekâyı mobil uygulamalara akıllıca eklemek — Emre Akin</title>
+<meta name="description" content="Yapay zekâyı bir mobil uygulamaya gösteriş için değil, gerçek bir sorunu çözmek için nasıl eklemeli? Maliyet, gecikme, gizlilik ve kullanıcı değeri üzerine pratik notlar." />
+<meta name="author" content="Emre Akin" />
+<meta name="theme-color" content="#0a0e1a" />
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="../index.html" class="brand"><span class="logo">🚀</span> Emre Akin</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="../index.html">Ana Sayfa</a>
+      <a href="../index.html#apps">Uygulamalar</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../about.html">Hakkımda</a>
+      <a href="../contact.html">İletişim</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Menü">☰</button>
+  </div>
+</header>
+
+<main>
+<article>
+  <div class="container">
+    <div class="prose">
+      <p class="crumb"><a href="../blog.html">← Blog</a> · Yapay Zekâ</p>
+      <h1>Yapay zekâyı mobil uygulamalara akıllıca eklemek</h1>
+      <p class="meta">Emre Akin tarafından · Yapay Zekâ</p>
+
+      <p class="lead-p">
+        Yapay zekâ artık her uygulamanın etiketine yapıştırılan bir rozet haline geldi. Ama
+        bir özelliğin üstüne "AI" yazmak, onu otomatik olarak faydalı yapmaz. Birkaç
+        uygulamamda yapay zekâ kullandım ve bu süreçte öğrendiğim en önemli ders şu: AI'yı
+        gösteriş için değil, gerçek bir sorunu çözmek için eklemelisiniz.
+      </p>
+
+      <h2>Önce sorun, sonra teknoloji</h2>
+      <p>
+        Bir özelliğe başlamadan önce hep aynı soruyu soruyorum: "Bu sorun yapay zekâ olmadan
+        zaten çözülebiliyor mu?" Eğer cevap evetse, AI eklemek sadece karmaşıklık ve maliyet
+        getirir. Ama bazı sorunlar gerçekten yapay zekâ için biçilmiş kaftan. Örneğin
+        <strong>Akıllı Kalori</strong> uygulamamda, kullanıcının çektiği yemek fotoğrafını
+        analiz edip kalori tahmini yapmak klasik kodla neredeyse imkânsız. İşte burada AI
+        gerçek bir değer katıyor.
+      </p>
+
+      <h2>Kendi uygulamalarımdan örnekler</h2>
+      <ul>
+        <li><strong>Akıllı Kalori:</strong> Fotoğraftan yemek tanıma ve besin değeri tahmini — görüntü anlama olmadan yapılamayacak bir iş.</li>
+        <li><strong>Sağlık Belge Asistanı:</strong> Karmaşık tıbbi belgeleri okunabilir, sade bir özete çevirmek. Burada AI'nın metin anlama yeteneği zaman kazandırıyor.</li>
+        <li><strong>Akıllı Dil / Akıllı Konuşma:</strong> Kullanıcının söylediklerini anlayıp doğal bir konuşma partneri gibi yanıt vermek — dil pratiği için ideal.</li>
+        <li><strong>LiveTalk AI:</strong> Gerçek zamanlı sesli sohbet; metin değil, doğrudan konuşma üzerinden etkileşim.</li>
+      </ul>
+      <p>
+        Bu örneklerin ortak noktası, hiçbirinde AI'nın "süs" olmaması. Her birinde yapay
+        zekâ, başka türlü çözülmesi çok zor olan bir işi üstleniyor.
+      </p>
+
+      <h2>Maliyet ve gecikmeyi unutmayın</h2>
+      <p>
+        Yapay zekâ modellerine yapılan her istek hem para hem de zaman maliyeti taşır.
+        Kullanıcı bir butona bastığında saniyelerce beklemek zorunda kalırsa, ne kadar akıllı
+        olursa olsun o özellik kötü hissettirir. Bu yüzden:
+      </p>
+      <ul>
+        <li>Gereksiz istekleri engellemek için sonuçları mümkün olduğunca önbelleğe alıyorum.</li>
+        <li>Kullanıcıya bir bekleme göstergesi sunup, işlem sırasında uygulamanın donmuş gibi görünmesini engelliyorum.</li>
+        <li>Basit işleri AI'ya yıkmak yerine cihazda klasik kodla çözüyorum; AI'yı yalnızca gerçekten gereken yerde devreye sokuyorum.</li>
+      </ul>
+
+      <blockquote>
+        Kullanıcı "vay be, bunu nasıl yaptı?" demeli; "neden bu kadar yavaş ve neden bana
+        bunu soruyor?" değil.
+      </blockquote>
+
+      <h2>Gizlilik ve dürüstlük</h2>
+      <p>
+        Bir uygulama veriyi işlenmek üzere bir AI modeline gönderiyorsa, kullanıcının bunu
+        bilmeye hakkı var. Özellikle sağlık veya kişisel içerik söz konusu olduğunda şeffaf
+        olmak şart. Kullanıcıya hangi verinin neden gönderildiğini açıkça anlatıyorum ve
+        gereğinden fazla veri toplamıyorum. Yapay zekâ ne kadar etkileyici olursa olsun,
+        kullanıcının güvenini kaybetmeye değmez.
+      </p>
+
+      <h2>Hata payını kabullenmek</h2>
+      <p>
+        Yapay zekâ her zaman doğru sonuç vermez. Kalori tahmini yaklaşık bir değerdir, belge
+        özeti eksik kalabilir. Bu yüzden bu tür sonuçları kesin bir gerçek gibi değil,
+        "tahmin" veya "öneri" olarak sunuyorum. Kullanıcının beklentisini doğru ayarlamak,
+        sonradan yaşanacak hayal kırıklığını önlüyor.
+      </p>
+
+      <h2>Sonuç</h2>
+      <p>
+        Yapay zekâ, doğru yerde kullanıldığında bir uygulamayı gerçekten dönüştürebilir. Ama
+        sihirli bir tozdan ziyade, dikkatle yerleştirilmesi gereken güçlü bir araç. Soruyu
+        teknolojiyle değil, kullanıcının gerçek ihtiyacıyla başlatmak, bu aracın en doğru
+        şekilde kullanılmasını sağlıyor.
+      </p>
+      <p>
+        Yapay zekâ destekli uygulamalarımı <a href="../index.html#apps">ana sayfadaki listede</a>
+        görebilir, diğer yazılarımı <a href="../blog.html">blog sayfasından</a> okuyabilirsiniz.
+      </p>
+    </div>
+  </div>
+</article>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-copy">© <span id="year">2026</span> Emre Akin · Tüm hakları saklıdır.</div>
+    <div class="footer-links">
+      <a href="../index.html">Ana Sayfa</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../about.html">Hakkımda</a>
+      <a href="../contact.html">İletişim</a>
+      <a href="../privacy.html">Gizlilik</a>
+      <a href="../terms.html">Şartlar</a>
+    </div>
+  </div>
+</footer>
+<script src="../assets/main.js"></script>
+</body>
+</html>

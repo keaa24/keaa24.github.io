@@ -1,12 +1,123 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <title>Hakkında</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hakkımda — Emre Akin</title>
+<meta name="description" content="Emre Akin kimdir? Bağımsız bir mobil uygulama ve oyun geliştiricisi olarak 80+ Flutter uygulaması geliştirme yolculuğu, çalışma şekli ve değerleri." />
+<meta name="author" content="Emre Akin" />
+<meta name="theme-color" content="#0a0e1a" />
+<link rel="stylesheet" href="assets/style.css" />
 </head>
-<body style="font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; line-height: 1.6;">
-  <h1>Hakkında</h1>
-  <p>Bu web uygulaması, kullanıcıların basit ve hızlı şekilde hizmetten yararlanabilmesi için geliştirilmiştir.</p>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="index.html" class="brand"><span class="logo">🚀</span> Emre Akin</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Ana Sayfa</a>
+      <a href="index.html#apps">Uygulamalar</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html" class="active">Hakkımda</a>
+      <a href="contact.html">İletişim</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Menü">☰</button>
+  </div>
+</header>
+
+<main>
+<section>
+  <div class="container">
+    <div class="about-grid">
+      <aside class="about-card">
+        <div class="avatar">👨‍💻</div>
+        <h3>Emre Akin</h3>
+        <div class="role">Mobil Uygulama &amp; Oyun Geliştiricisi</div>
+        <p style="color:var(--muted); font-size:14px; margin-top:18px;">Flutter · Yapay Zekâ · Oyun Tasarımı</p>
+        <a href="contact.html" class="btn btn-primary" style="margin-top:18px;">İletişime Geç</a>
+      </aside>
+
+      <div class="prose" style="max-width: none;">
+        <h1>Hakkımda</h1>
+        <p class="lead-p">
+          Merhaba, ben Emre Akin. Mobil uygulama ve oyun geliştirmeye tutkuyla bağlı,
+          bağımsız bir geliştiriciyim. Bir fikri kafamda kurmaktan onu gerçek bir telefonda,
+          gerçek bir kullanıcının elinde çalışır görmeye kadar olan yolculuğun her adımını seviyorum.
+        </p>
+
+        <h2>Nasıl başladım?</h2>
+        <p>
+          Her şey küçük bir merakla başladı: "Acaba bu fikri ben de yapabilir miyim?" İlk
+          uygulamalarım basit, hatta biraz çirkindi. Ama her yeni proje bana bir önceki
+          projenin öğretemediği bir şeyi öğretti. Zamanla bu merak, ciddi bir üretim
+          alışkanlığına dönüştü. Bugün geldiğim noktada, yapay zekâ destekli araçlardan
+          eğlenceli oyunlara kadar uzanan <strong>80'den fazla uygulama ve oyun</strong>
+          geliştirip yayınlamış durumdayım.
+        </p>
+
+        <h2>Çalışma şeklim</h2>
+        <p>
+          Tek kişilik bir stüdyo gibi çalışıyorum. Bu, fikri belirlemekten arayüzü tasarlamaya,
+          kodu yazmaktan mağaza görsellerini hazırlamaya kadar her şeyi kendimin yaptığı anlamına
+          geliyor. Bu kadar çok uygulamayı tek başıma sürdürebilmemin birkaç sebebi var:
+        </p>
+        <ul>
+          <li><strong>Tekrar kullanılabilir kod:</strong> Ortak parçaları (ayarlar, tema, reklam entegrasyonu, çok dil desteği) bir kez yazıp her projede yeniden kullanıyorum.</li>
+          <li><strong>Acımasız sadelik:</strong> Her uygulama tek bir işi iyi yapmaya odaklanır. "Olsa güzel olur" diye eklenen özelliklere genelde hayır diyorum.</li>
+          <li><strong>Hızlı yineleme:</strong> Mükemmel olmayı beklemeden yayınlar, sonra kullanıcı geri bildirimine göre geliştiririm.</li>
+        </ul>
+
+        <h2>İnandığım değerler</h2>
+        <p>
+          Geliştirdiğim her uygulamada üç ilkeye sadık kalmaya çalışıyorum. Birincisi
+          <strong>sadelik</strong>: kullanıcı uygulamayı açtığı an ne yapacağını anlamalı.
+          İkincisi <strong>gizlilik</strong>: uygulamalarımın çoğu çevrimdışı çalışır, böylece
+          veriniz cihazınızdan dışarı çıkmaz. Üçüncüsü ise <strong>dürüstlük</strong>: bir özellik
+          ne yapacağını söylüyorsa onu yapar, kullanıcıyı yanıltacak karanlık tasarım kalıplarından
+          uzak dururum.
+        </p>
+
+        <h2>Ne tür şeyler geliştiriyorum?</h2>
+        <p>
+          Çalışmalarım yedi ana kategoriye yayılıyor: yapay zekâ destekli araçlar, oyunlar
+          (arcade, bulmaca, kart ve masa oyunları), üretkenlik uygulamaları, dini içerik
+          uygulamaları, iletişim araçları, finans ve tahmin uygulamaları, son olarak da sistem
+          ve yardımcı araçlar. Bu çeşitlilik bilinçli bir tercih: farklı problemler üzerinde
+          çalışmak beni hem öğrenmeye devam ettiriyor hem de bir alanda öğrendiğimi başka bir
+          alana taşımamı sağlıyor.
+        </p>
+
+        <h2>Bu site ne için var?</h2>
+        <p>
+          Bu site iki işe yarıyor. Birincisi, geliştirip yayınladığım uygulamaların derli toplu
+          bir vitrini. İkincisi, mobil geliştirme üzerine deneyimlerimi paylaştığım bir blog.
+          Hem yeni bir şey öğrenmek isteyen geliştiricilere yardımcı olmak hem de kendi düşünce
+          sürecimi yazıya dökmek için <a href="blog.html">blog bölümünde</a> düzenli yazıyorum.
+        </p>
+        <p>
+          Bir sorun, öneri veya sadece merhaba demek istersen
+          <a href="contact.html">iletişim sayfasından</a> bana ulaşabilirsin. Geri bildirim,
+          bir sonraki uygulamayı daha iyi yapmamın en değerli kaynağı.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-copy">© <span id="year">2026</span> Emre Akin · Tüm hakları saklıdır.</div>
+    <div class="footer-links">
+      <a href="index.html">Ana Sayfa</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html">Hakkımda</a>
+      <a href="contact.html">İletişim</a>
+      <a href="privacy.html">Gizlilik</a>
+      <a href="terms.html">Şartlar</a>
+    </div>
+  </div>
+</footer>
+<script src="assets/main.js"></script>
 </body>
 </html>
