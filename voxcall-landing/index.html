@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="VoxCall is a Flutter WebRTC voice and video calling starter kit with Firebase signaling and configurable STUN/TURN support." />
+  <meta name="theme-color" content="#0b1020" />
+  <title>VoxCall — Flutter WebRTC Voice & Video Calling Starter Kit</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav-wrap">
+    <nav class="nav container">
+      <a class="brand" href="#top" aria-label="VoxCall home">
+        <span class="brand-mark">V</span>
+        <span>VoxCall</span>
+      </a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#stack">Tech</a>
+        <a href="#included">Included</a>
+        <a class="btn btn-small" href="#buy">Get VoxCall</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero container">
+      <div class="hero-copy">
+        <div class="badge">Flutter • WebRTC • Firebase</div>
+        <h1>Launch voice & video calling faster with <span>VoxCall</span>.</h1>
+        <p class="lead">
+          A focused Flutter starter kit for building peer-to-peer voice and video calling
+          with WebRTC, Firebase-based signaling, and configurable STUN/TURN connectivity.
+        </p>
+        <div class="hero-actions">
+          <a class="btn" href="#buy">Get VoxCall</a>
+          <a class="btn btn-ghost" href="#features">Explore features</a>
+        </div>
+        <div class="trust-row">
+          <span>✓ Source code included</span>
+          <span>✓ Android & iOS ready structure</span>
+          <span>✓ Setup documentation</span>
+        </div>
+      </div>
+
+      <div class="hero-card" aria-label="VoxCall product preview">
+        <div class="window-bar">
+          <span></span><span></span><span></span>
+          <small>VoxCall</small>
+        </div>
+        <div class="call-preview">
+          <div class="video remote">
+            <div class="avatar">VC</div>
+            <div class="signal">Encrypted transport • WebRTC</div>
+          </div>
+          <div class="video local">
+            <div class="avatar mini">YOU</div>
+          </div>
+          <div class="call-controls">
+            <button aria-label="Mute">⌁</button>
+            <button aria-label="Video">◉</button>
+            <button class="hangup" aria-label="Hang up">✕</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="container stats-grid">
+        <div><strong>Flutter</strong><span>Cross-platform UI</span></div>
+        <div><strong>WebRTC</strong><span>Real-time media</span></div>
+        <div><strong>Firebase</strong><span>Signaling workflow</span></div>
+        <div><strong>STUN / TURN</strong><span>Configurable connectivity</span></div>
+      </div>
+    </section>
+
+    <section id="features" class="section container">
+      <div class="section-head">
+        <div class="eyebrow">Core features</div>
+        <h2>The essentials for a calling app, already structured.</h2>
+        <p>Use the starter as a base, replace the branding, plug in your configuration, and extend it for your own product.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="icon">🎙</div>
+          <h3>Voice Calls</h3>
+          <p>Peer-to-peer audio calling flow built around WebRTC media connections.</p>
+        </article>
+        <article class="card">
+          <div class="icon">📹</div>
+          <h3>Video Calls</h3>
+          <p>Video calling UI and media handling designed for mobile Flutter projects.</p>
+        </article>
+        <article class="card">
+          <div class="icon">⚡</div>
+          <h3>Firebase Signaling</h3>
+          <p>Simple signaling workflow designed to exchange call setup information between peers.</p>
+        </article>
+        <article class="card">
+          <div class="icon">🌐</div>
+          <h3>STUN / TURN</h3>
+          <p>Configure your own STUN and TURN servers for real-world NAT traversal scenarios.</p>
+        </article>
+        <article class="card">
+          <div class="icon">🧩</div>
+          <h3>Easy to Customize</h3>
+          <p>Clear project structure so you can adapt branding, screens, logic, and integrations.</p>
+        </article>
+        <article class="card">
+          <div class="icon">📘</div>
+          <h3>Documentation</h3>
+          <p>Setup guidance for Firebase configuration, dependencies, and call infrastructure.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="stack" class="section section-dark">
+      <div class="container split">
+        <div>
+          <div class="eyebrow">Technology</div>
+          <h2>Built on a practical real-time stack.</h2>
+          <p class="muted">
+            VoxCall is intended for developers who want a working foundation rather than
+            starting the WebRTC call flow from a blank Flutter project.
+          </p>
+        </div>
+        <div class="stack-list">
+          <div><span>01</span><strong>Flutter</strong><p>Single codebase for mobile application UI.</p></div>
+          <div><span>02</span><strong>WebRTC</strong><p>Low-latency peer-to-peer audio and video.</p></div>
+          <div><span>03</span><strong>Firebase</strong><p>Lightweight signaling and project configuration.</p></div>
+          <div><span>04</span><strong>ICE / STUN / TURN</strong><p>Connectivity across different network environments.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="included" class="section container">
+      <div class="section-head">
+        <div class="eyebrow">What's included</div>
+        <h2>A starter package you can actually build on.</h2>
+      </div>
+      <div class="included-grid">
+        <div class="check-panel">
+          <p>✓ Flutter project source code</p>
+          <p>✓ Voice calling flow</p>
+          <p>✓ Video calling flow</p>
+          <p>✓ Firebase setup structure</p>
+        </div>
+        <div class="check-panel">
+          <p>✓ STUN/TURN configuration points</p>
+          <p>✓ Responsive mobile UI</p>
+          <p>✓ Setup documentation</p>
+          <p>✓ Developer-friendly project structure</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="buy" class="section container">
+      <div class="cta">
+        <div>
+          <div class="eyebrow">VoxCall</div>
+          <h2>Build your calling experience on a stronger starting point.</h2>
+          <p>Purchase link will be available here after the store listing is published.</p>
+        </div>
+        <a class="btn btn-disabled" href="#" aria-disabled="true" onclick="return false;">Coming Soon</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="#top"><span class="brand-mark">V</span><span>VoxCall</span></a>
+        <p>Flutter WebRTC Voice & Video Calling Starter Kit</p>
+      </div>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+    <div class="container copyright">
+      © <span id="year"></span> VoxCall. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
