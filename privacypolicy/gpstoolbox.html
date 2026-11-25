@@ -17,74 +17,119 @@
     h1, h2 {
       color: #111;
     }
-    .section {
+    section {
       margin-bottom: 28px;
     }
   </style>
 </head>
 <body>
-  <h1>Privacy Policy for GPS Toolbox</h1>
-
-  <div class="section">
+  <main>
+    <h1>Privacy Policy for GPS Toolbox</h1>
+    <p>Last updated <time datetime="2026-11-25">November 25, 2026</time></p>
     <p>
-      This Privacy Policy describes how GPS Toolbox ("the App") handles user information.
+      This policy describes how Duman Emre Akın's Android app GPS Toolbox
+      (<code>com.emre.gpstoolbox</code>) accesses, uses, stores, and shares data.
     </p>
-  </div>
 
-  <div class="section">
-    <h2>Information Collection</h2>
-    <p>
-      GPS Toolbox does not collect, store, or share any personal information from users.
-    </p>
-  </div>
+    <section>
+      <h2>Location data and how we use it</h2>
+      <p>
+        GPS Toolbox requests approximate and precise location permissions. With your permission,
+        the app accesses location readings from Android, including latitude, longitude, accuracy,
+        and time, as well as altitude, speed, and direction of travel when available. Features
+        such as route recording and saving your current position use precise location.
+      </p>
+      <ul>
+        <li>The app uses location to show your position, GPS measurements, and directions to saved places.</li>
+        <li>When you record a route or measure by walking, the app uses location points to draw the route and calculate distance or area.</li>
+        <li>When you save a place, a parking spot, a return point, or a location alarm, the app stores its coordinates along with any name or note you enter.</li>
+        <li>When you take a GPS photo, the app uses the device's camera app to take the picture and adds coordinates, time, accuracy, and altitude when available. It stores the original and stamped copies on your device.</li>
+      </ul>
+    </section>
 
-  <div class="section">
-    <h2>Third-Party Services</h2>
-    <p>
-      The App may use third-party services such as news APIs and advertising providers.
-      These services may collect technical data such as device information, IP address,
-      or usage statistics according to their own privacy policies.
-    </p>
-  </div>
+    <section>
+      <h2>Background location access</h2>
+      <p>
+        If you turn on automatic route recording, start a manual route, or activate a location
+        alarm, GPS Toolbox can access precise location in the background, including when the
+        screen is locked or you are using another app. It uses these readings to continue a route
+        or check whether you enter or leave the area you selected for the alarm. Automatic route
+        recording is off by default. The tracking service uses an ongoing notification, subject
+        to your Android notification settings.
+      </p>
+      <p>
+        If you grant Android's <strong>Allow all the time</strong> location permission, the app
+        can resume automatic recording, an unpaused manual route, or an active location alarm
+        after the device restarts, before you reopen the app. You can turn off automatic recording,
+        end a manual route, disable an alarm, or change location access in Android settings.
+      </p>
+    </section>
 
-  <div class="section">
-    <h2>Data Usage</h2>
-    <p>
-      Since no personal data is collected by the App, there is no usage, storage, or sharing
-      of user personal information.
-    </p>
-  </div>
+    <section>
+      <h2>When information leaves your device</h2>
+      <ul>
+        <li>
+          <strong>Online maps.</strong> When you enable online maps, the app requests map tiles
+          from the OpenStreetMap Foundation over HTTPS. The service receives your IP address,
+          request details, and tile coordinates that indicate the map area and zoom level you are
+          viewing. That area may include your current or saved location. Tile requests do not
+          attach your saved routes, notes, or photos.
+          <a href="https://osmfoundation.org/wiki/Privacy_Policy">OpenStreetMap Foundation Privacy Policy</a>
+        </li>
+        <li>
+          <strong>Sharing and directions.</strong> When you choose to share coordinates, a GPX
+          route, or a GPS-stamped photo, the app passes that information to the app you choose.
+          A GPX file includes route points and their timestamps, with altitude when available.
+          When you open directions in a navigation app, it receives the selected destination
+          coordinates. The recipient's own privacy practices apply.
+        </li>
+        <li>
+          <strong>Support email.</strong> If you contact the developer, the developer receives
+          your email address and the information you include, and uses it to respond to your inquiry.
+        </li>
+      </ul>
+      <p>
+        GPS Toolbox does not require an account and does not upload saved records to a developer
+        server. The app does not use location for advertising or analytics.
+      </p>
+    </section>
 
-  <div class="section">
-    <h2>Children's Privacy</h2>
-    <p>
-      The App is not directed to children under the age of 13 and does not knowingly collect
-      personal information from children.
-    </p>
-  </div>
+    <section>
+      <h2>Storage, retention, and deletion</h2>
+      <p>
+        GPS Toolbox stores its records and photos in app-private storage protected by Android's
+        app isolation. The app disables Android's app backup for its data. Map requests use HTTPS.
+      </p>
+      <ul>
+        <li>Automatic location history shows the most recent 24 hours. The app removes older history points when it starts or the tracking service performs cleanup.</li>
+        <li>Saved manual and automatic routes, saved places, measurements, and alarm records are separate from the 24-hour history. They remain on the device until you delete them or clear the app's storage.</li>
+        <li>
+          Use <strong>Settings → Data and about → Clear recent location history</strong> to delete
+          recent location points. You can delete saved records individually. Deleting a photo
+          entry removes its record. To remove its original and stamped files from the app's storage,
+          clear GPS Toolbox storage in Android settings or uninstall the app.
+        </li>
+        <li>Clearing app storage also removes local records and cached files. Copies you already shared or exported are managed by the recipient or the app where you saved them.</li>
+      </ul>
+    </section>
 
-  <div class="section">
-    <h2>Security</h2>
-    <p>
-      Although the App does not collect personal data, reasonable measures are taken to ensure
-      safe usage of the application.
-    </p>
-  </div>
+    <section>
+      <h2>Children's privacy</h2>
+      <p>GPS Toolbox is not directed to children under the age of 13.</p>
+    </section>
 
-  <div class="section">
-    <h2>Changes to This Policy</h2>
-    <p>
-      This Privacy Policy may be updated from time to time. Any changes will be reflected on this page.
-    </p>
-  </div>
+    <section>
+      <h2>Changes to this policy</h2>
+      <p>Updates to this policy will appear on this page with a new revision date.</p>
+    </section>
 
-  <div class="section">
-    <h2>Contact</h2>
-    <p>
-      If you have any questions or concerns about this Privacy Policy, you can contact:
-    </p>
-    <p><strong>Email:</strong> dumanemre1993@gmail.com</p>
-  </div>
-
+    <section>
+      <h2>Privacy contact</h2>
+      <p>
+        For privacy questions or data inquiries, contact Duman Emre Akın at
+        <a href="mailto:dumanemre1993@gmail.com">dumanemre1993@gmail.com</a>.
+      </p>
+    </section>
+  </main>
 </body>
 </html>
